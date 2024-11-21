@@ -9,10 +9,9 @@ public class BasicParser extends DelimiterParser {
 
     @Override
     public void parse(String input, CalculateValue calculateValue) {
-        List<String> delimiters = BasicDelimiter.getDelimiters();
+        List<String> delimiters = BasicDelimiter.getAll();
         calculateValue.addAllNumber(parseIntoSplit(input, delimiters));
     }
-
 
     @Override
     public ParserType getParserType() {

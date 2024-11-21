@@ -17,7 +17,7 @@ public enum BasicDelimiter {
         return delimiter;
     }
 
-    public static List<String> getDelimiters() {
+    public static List<String> getAll() {
         List<String> result = new ArrayList<>();
         for (BasicDelimiter basicDelimiter : BasicDelimiter.values()) {
             result.add(basicDelimiter.get());

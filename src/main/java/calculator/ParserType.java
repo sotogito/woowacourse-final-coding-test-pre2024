@@ -1,6 +1,21 @@
 package calculator;
 
 public enum ParserType {
-    BASIC,
-    CUSTOM;
+    BASIC(null),
+    CUSTOM("//(.)\\\\n");
+
+    private final String inputForm;
+
+    ParserType(String inputForm) {
+        this.inputForm = inputForm;
+    }
+
+    public String getInputForm() {
+        return inputForm;
+    }
+
+    public static String getCustomParserTypeJudge() {
+        return "//(.*)\\\\n";
+    }
+
 }
