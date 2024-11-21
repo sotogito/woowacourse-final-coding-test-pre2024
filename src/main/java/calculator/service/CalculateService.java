@@ -18,7 +18,7 @@ public class CalculateService {
 
     public void parse(String input){
         DelimiterParser delimiterParser = inputValueMatcher.findDelimiterParser(input);
-        delimiterParser.parse(input,calculateValue);
+        delimiterParser.parse(input.trim(),calculateValue);
     }
 
     public int calculate(){

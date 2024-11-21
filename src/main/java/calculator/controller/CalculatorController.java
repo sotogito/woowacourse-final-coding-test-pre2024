@@ -5,6 +5,7 @@ import calculator.domain.InputValueMatcher;
 import calculator.domain.calculator.AddCalculator;
 import calculator.service.CalculateService;
 import calculator.view.Input;
+import calculator.view.Output;
 import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -24,19 +25,19 @@ public class CalculatorController {
         printResult();
     }
 
-    private void printResult() {
-        System.out.println(calculateService.calculate());
-    }
-
     private void parseInputValue(){
         while(true){
             try{
                 calculateService.parse(Input.inputCalculateValue());
                 return;
             }catch (IllegalArgumentException e){
-                e.printStackTrace();
+                Output.printError(e.getMessage());
             }
         }
+    }
+
+    private void printResult() {
+        Output.printResult(calculateService.calculate());
     }
 
 
