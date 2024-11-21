@@ -48,6 +48,33 @@ class CustomParserTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
+    @Test
+    void 메타_문자_계산_결과_확인(){
+        CalculateValue calculateValue = new CalculateValue();
+        Calculator calculator = new AddCalculator();
+        String input = "///\n1/2/3";
+
+        customParser.parse(input, calculateValue);
+
+        int expected = 6;
+        int actual = calculateValue.calculate(calculator);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void 메타_문자_여러개_계산_결과_확인(){
+        CalculateValue calculateValue = new CalculateValue();
+        Calculator calculator = new AddCalculator();
+        String input = "///\n//*\n1*2/3";
+
+        customParser.parse(input, calculateValue);
+
+        int expected = 6;
+        int actual = calculateValue.calculate(calculator);
+
+        assertEquals(expected, actual);
+    }
 
 
 }
