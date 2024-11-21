@@ -9,10 +9,11 @@ import java.util.regex.Pattern;
 public class CustomParser implements DelimiterParser {
     private final static String CUSTOM_PATTERN = "//(.)\\n";
 
-    public static void main(String[] args) {
-        DelimiterParser customParser = new CustomParser();
-        customParser.parse("//1\n//2\n1,2,3",new CalculateValue());
-    }
+    private final static List<String> META_CHARACTERS = new ArrayList<>(
+            List.of(".", "^", "$", "*", "+" ,"?" ,
+                    "{" ,"}", "[" ,"]" ,"\\", "|", "(" ,")"));
+    private final static String ESCAPE_CHARACTER = "\\";
+
 
     @Override
     public void parse(String input, CalculateValue calculateValue) {
@@ -22,7 +23,12 @@ public class CustomParser implements DelimiterParser {
         List<String> customDelimiters = new ArrayList<>();
 
         while (matcher.find()) {
-            customDelimiters.add(matcher.group(1));
+            String delimiter = matcher.group(1);
+
+            if(META_CHARACTERS.contains(delimiter)){
+                delimiter = ESCAPE_CHARACTER + delimiter;
+            }
+            customDelimiters.add(delimiter);
         }
 
         String delimiterSplit = String.join("|", customDelimiters);
