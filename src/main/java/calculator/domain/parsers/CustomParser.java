@@ -1,5 +1,6 @@
 package calculator.domain.parsers;
 
+import calculator.ParserType;
 import calculator.domain.CalculateValue;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ public class CustomParser implements DelimiterParser {
     public void parse(String input, CalculateValue calculateValue) {
         Pattern pattern = Pattern.compile(CUSTOM_PATTERN);
         Matcher matcher = pattern.matcher(input);
+
 
         List<String> customDelimiters = new ArrayList<>();
 
@@ -59,6 +61,11 @@ public class CustomParser implements DelimiterParser {
             calculateValue.addNumber(number);
         }
 
-
     }
+
+    @Override
+    public ParserType getParserType() {
+        return ParserType.CUSTOM;
+    }
+
 }
