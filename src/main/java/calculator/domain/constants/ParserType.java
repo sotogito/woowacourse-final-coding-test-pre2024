@@ -1,4 +1,4 @@
-package calculator;
+package calculator.domain.constants;
 
 public enum ParserType {
     BASIC(null),

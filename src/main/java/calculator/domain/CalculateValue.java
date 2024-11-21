@@ -18,9 +18,5 @@ public class CalculateValue {
     public int calculate(Calculator calculator) {
         return calculator.calculate(this.numbers);
     }
-
-    public List<Integer> getNumbers() {
-        return numbers;
-    }
-
+    
 }

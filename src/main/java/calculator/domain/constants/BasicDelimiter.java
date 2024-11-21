@@ -1,4 +1,4 @@
-package calculator.domain;
+package calculator.domain.constants;
 
 import java.util.ArrayList;
 import java.util.List;

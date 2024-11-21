@@ -6,31 +6,26 @@ import calculator.domain.calculator.AddCalculator;
 import calculator.service.CalculateService;
 import calculator.view.Input;
 import calculator.view.Output;
-import camp.nextstep.edu.missionutils.Console;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CalculatorController {
     private CalculateService calculateService;
 
-    public void run(){
+    public void run() {
         calculateService = new CalculateService(
                 new InputValueMatcher(),
                 new CalculateValue(),
                 new AddCalculator());
 
         parseInputValue();
-
         printResult();
     }
 
-    private void parseInputValue(){
-        while(true){
-            try{
+    private void parseInputValue() {
+        while (true) {
+            try {
                 calculateService.parse(Input.inputCalculateValue());
                 return;
-            }catch (IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 Output.printError(e.getMessage());
             }
         }
@@ -39,6 +34,5 @@ public class CalculatorController {
     private void printResult() {
         Output.printResult(calculateService.calculate());
     }
-
 
 }

@@ -1,8 +1,8 @@
 package calculator.domain.parsers;
 
-import calculator.ParserType;
-import calculator.domain.BasicDelimiter;
 import calculator.domain.CalculateValue;
+import calculator.domain.constants.BasicDelimiter;
+import calculator.domain.constants.ParserType;
 import java.util.List;
 
 public class BasicParser extends DelimiterParser {
