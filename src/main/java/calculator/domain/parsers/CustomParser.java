@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CustomParser implements DelimiterParser {
-    private final static String CUSTOM_PATTERN = "//(.)\\n";
+    private final static String CUSTOM_PATTERN = "//(.)\\\\n";
 
     private final static List<String> META_CHARACTERS = new ArrayList<>(
             List.of(".", "^", "$", "*", "+" ,"?" ,

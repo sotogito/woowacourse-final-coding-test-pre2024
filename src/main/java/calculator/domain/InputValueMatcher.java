@@ -19,10 +19,11 @@ public class InputValueMatcher {
     }
 
     public DelimiterParser findDelimiterParser(String input) {
-        Matcher customDelimiterMatcher = Pattern.compile("//(.)\\n").matcher(input);
+        Matcher customDelimiterMatcher = Pattern.compile("//(.)\\\\n").matcher(input);
         if (customDelimiterMatcher.find()) {
             return customDelimiterParser;
         }
+
         return baseDelimiterParser;
     }
 
