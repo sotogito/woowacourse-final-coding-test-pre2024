@@ -20,18 +20,7 @@ public class CustomParser implements DelimiterParser {
     public void parse(String input, CalculateValue calculateValue) {
         Pattern pattern = Pattern.compile(CUSTOM_PATTERN);
         Matcher matcher = pattern.matcher(input);
-
-
-        List<String> customDelimiters = new ArrayList<>();
-
-        while (matcher.find()) {
-            String delimiter = matcher.group(1);
-
-            if(META_CHARACTERS.contains(delimiter)){
-                delimiter = ESCAPE_CHARACTER + delimiter;
-            }
-            customDelimiters.add(delimiter);
-        }
+        List<String> customDelimiters = findCustomDelimiter(matcher);
 
         String delimiterSplit = String.join("|", customDelimiters);
         String value = input.replaceAll(CUSTOM_PATTERN, "");
@@ -61,6 +50,24 @@ public class CustomParser implements DelimiterParser {
             calculateValue.addNumber(number);
         }
 
+    }
+
+    private List<String> findCustomDelimiter(Matcher matcher) {
+        List<String> customDelimiters = new ArrayList<>();
+
+        while (matcher.find()) {
+            String delimiter = matcher.group(1);
+
+            if(META_CHARACTERS.contains(delimiter)){
+                delimiter = ESCAPE_CHARACTER + delimiter;
+            }
+            customDelimiters.add(delimiter);
+        }
+
+        if(customDelimiters.isEmpty()){
+            throw new IllegalArgumentException("문자열이 아닌 문자를 입력해주세요.");
+        }
+        return customDelimiters;
     }
 
     @Override
