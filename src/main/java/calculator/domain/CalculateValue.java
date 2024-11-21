@@ -11,8 +11,8 @@ public class CalculateValue {
         this.numbers = new ArrayList<>();
     }
 
-    public void addNumber(int number) {
-        this.numbers.add(number);
+    public void addAllNumber(List<Integer> numbers) {
+        this.numbers.addAll(numbers);
     }
 
     public int calculate(Calculator calculator) {

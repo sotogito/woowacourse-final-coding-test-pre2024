@@ -3,7 +3,6 @@ package calculator.domain;
 import static org.junit.jupiter.api.Assertions.*;
 
 import calculator.ParserType;
-import calculator.domain.parsers.DelimiterParser;
 import org.junit.jupiter.api.Test;
 
 class InputValueMatcherTest {

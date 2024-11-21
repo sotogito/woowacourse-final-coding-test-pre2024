@@ -3,8 +3,6 @@ package calculator.domain;
 import calculator.domain.parsers.BasicParser;
 import calculator.domain.parsers.CustomParser;
 import calculator.domain.parsers.DelimiterParser;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
