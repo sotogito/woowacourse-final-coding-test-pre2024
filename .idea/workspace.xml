@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d46770dd-d808-493b-9538-a8cb5fe4cdaf" name="Changes" comment="style : 줄간격 조정 및 패키지 변경" />
+    <list default="true" id="d46770dd-d808-493b-9538-a8cb5fe4cdaf" name="Changes" comment="feat : 구매 금액 입력받기">
+      <change afterPath="$PROJECT_DIR$/docs/NOTE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lotto/controller/LottoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lotto/service/LottoStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/Lotto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/domain/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lotto/domain/Rank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/service/LottoStoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lotto/service/LottoStoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/view/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lotto/view/Output.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +37,12 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="java-calculator" type="f1a62948:ProjectNode" />
+                <item name="java-lotto" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="java-lotto" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -38,10 +54,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
+        <option value="Record" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -51,7 +68,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="1-calculator-7" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,67 +85,70 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.AddCalculatorTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ApplicationTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ApplicationTest.기본_구분자_사용.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ApplicationTest.예외_테스트.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BasicParserTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BasicParserTest.기본_구분자_파싱_결과_확인.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.BasicParserTest.음수_숫자_포함_예외_처리.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CustomParserTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CustomParserTest.기본_구분자_파싱_결과_확인.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CustomParserTest.메타_문자_계산_결과_확인.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CustomParserTest.메타_문자_여러개_계산_결과_확인.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CustomParserTest.음수_숫자_포함_예외_처리.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CustomParserTest.한개_이상_커스텀_구분자_계산_결과_확인.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.InputValueMatcherTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.woowacourse-final-coding-test-pre2024 [:Application.main()].executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.woowacourse-final-coding-test-pre2024 [:CustomParser.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.AddCalculatorTest.executor": "Run",
+    "Gradle.ApplicationTest (1).executor": "Run",
+    "Gradle.ApplicationTest.executor": "Run",
+    "Gradle.ApplicationTest.기본_구분자_사용.executor": "Run",
+    "Gradle.ApplicationTest.예외_테스트.executor": "Run",
+    "Gradle.BasicParserTest.executor": "Run",
+    "Gradle.BasicParserTest.기본_구분자_파싱_결과_확인.executor": "Run",
+    "Gradle.BasicParserTest.음수_숫자_포함_예외_처리.executor": "Run",
+    "Gradle.ComputerLottoTest.executor": "Run",
+    "Gradle.CustomParserTest.executor": "Run",
+    "Gradle.CustomParserTest.기본_구분자_파싱_결과_확인.executor": "Run",
+    "Gradle.CustomParserTest.메타_문자_계산_결과_확인.executor": "Run",
+    "Gradle.CustomParserTest.메타_문자_여러개_계산_결과_확인.executor": "Run",
+    "Gradle.CustomParserTest.음수_숫자_포함_예외_처리.executor": "Run",
+    "Gradle.CustomParserTest.한개_이상_커스텀_구분자_계산_결과_확인.executor": "Run",
+    "Gradle.InputValueMatcherTest.executor": "Run",
+    "Gradle.LottoNumberParserTest.executor": "Run",
+    "Gradle.LottoNumberParserTest.문자_예외_처리.executor": "Run",
+    "Gradle.LottoNumberParserTest.파싱_결과_확인.executor": "Run",
+    "Gradle.LottoTest.executor": "Run",
+    "Gradle.ScoreManagerTest.executor": "Run",
+    "Gradle.ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인.executor": "Run",
+    "Gradle.ScoreManagerTest.삼등_당첨_결과_최종_상금_확인.executor": "Run",
+    "Gradle.ScoreManagerTest.이등_당첨_결과_최종_상금_확인.executor": "Run",
+    "Gradle.ScoreManagerTest.한개_당첨_결과_최종_상금_확인.executor": "Run",
+    "Gradle.Tests in 'java-lotto.test'.executor": "Run",
+    "Gradle.WalletTest.executor": "Run",
+    "Gradle.WalletTest.최고금액_미달_예외_처리.executor": "Run",
+    "Gradle.woowacourse-final-coding-test-pre2024 [:Application.main()].executor": "Run",
+    "Gradle.woowacourse-final-coding-test-pre2024 [:CustomParser.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="lotto.domain" />
+      <recent name="lotto" />
       <recent name="calculator.domain" />
       <recent name="calculator.domain.parsers" />
       <recent name="calculator.domain.calculator" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.lotto.Application">
+  <component name="RunManager" selected="Gradle.Tests in 'java-lotto.test'">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="calculator.Application" />
-      <module name="java-calculator.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="calculator.domain.constants.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="lotto.Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lotto.Application" />
       <module name="java-lotto.main" />
       <extension name="coverage">
@@ -154,7 +174,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;calculator.ApplicationTest&quot;" />
+            <option value="&quot;lotto.ApplicationTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -165,7 +185,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ApplicationTest.예외_테스트" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ScoreManagerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -178,7 +198,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;calculator.ApplicationTest.예외_테스트&quot;" />
+            <option value="&quot;lotto.domain.ScoreManagerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -189,7 +209,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ApplicationTest.기본_구분자_사용" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -202,7 +222,29 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;calculator.ApplicationTest.기본_구분자_사용&quot;" />
+            <option value="&quot;lotto.domain.ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'java-lotto.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -215,11 +257,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.lotto.Application" />
+        <item itemvalue="Gradle.Tests in 'java-lotto.test'" />
         <item itemvalue="Gradle.ApplicationTest" />
-        <item itemvalue="Gradle.ApplicationTest.예외_테스트" />
-        <item itemvalue="Gradle.ApplicationTest.기본_구분자_사용" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="Gradle.ScoreManagerTest" />
+        <item itemvalue="Gradle.ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인" />
       </list>
     </recent_temporary>
   </component>
@@ -244,6 +286,7 @@
       <workItem from="1732164243160" duration="16604000" />
       <workItem from="1732247809867" duration="8000" />
       <workItem from="1732339463355" duration="78000" />
+      <workItem from="1732339566067" duration="11072000" />
     </task>
     <task id="LOCAL-00001" summary="README 첨부">
       <option name="closed" value="true" />
@@ -461,28 +504,141 @@
       <option name="project" value="LOCAL" />
       <updated>1732180189270</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="문제 업로드">
+      <option name="closed" value="true" />
+      <created>1732339747424</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1732339747424</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat : 사용자 로또 객체 생성">
+      <option name="closed" value="true" />
+      <created>1732342503921</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1732342503921</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat : 컴퓨터 로또 생성">
+      <option name="closed" value="true" />
+      <created>1732342517934</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1732342517934</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat : 입력값 정수 리스트 변경 Parser 작성">
+      <option name="closed" value="true" />
+      <created>1732343153718</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1732343153718</updated>
+    </task>
+    <task id="LOCAL-00032" summary="test : 입력값 정수 리스트 변경 Parser 테스트">
+      <option name="closed" value="true" />
+      <created>1732343163556</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1732343163556</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat : 로또 티켓 객체 생성">
+      <option name="closed" value="true" />
+      <created>1732343670382</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1732343670382</updated>
+    </task>
+    <task id="LOCAL-00034" summary="feat : Wallet 객체 생성">
+      <option name="closed" value="true" />
+      <created>1732343901348</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1732343901348</updated>
+    </task>
+    <task id="LOCAL-00035" summary="test : Wallet 객체 데스트">
+      <option name="closed" value="true" />
+      <created>1732343909786</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1732343909786</updated>
+    </task>
+    <task id="LOCAL-00036" summary="feat : 컴퓨터 로또 생성">
+      <option name="closed" value="true" />
+      <created>1732344329304</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1732344329304</updated>
+    </task>
+    <task id="LOCAL-00037" summary="test : 컴퓨터 로또 생성 테스트">
+      <option name="closed" value="true" />
+      <created>1732344336988</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1732344336988</updated>
+    </task>
+    <task id="LOCAL-00038" summary="feat : 로또 당첨 순위 Enum 작성">
+      <option name="closed" value="true" />
+      <created>1732344499579</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1732344499579</updated>
+    </task>
+    <task id="LOCAL-00039" summary="feat : 컴퓨터, 사용자 로또 매칭">
+      <option name="closed" value="true" />
+      <created>1732347152270</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1732347152270</updated>
+    </task>
+    <task id="LOCAL-00040" summary="feat : 컴퓨터, 사용자 로또 매칭 결과 업데이트">
+      <option name="closed" value="true" />
+      <created>1732347185769</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1732347185769</updated>
+    </task>
+    <task id="LOCAL-00041" summary="test : 컴퓨터, 사용자 로또 매칭 결과 업데이트 테스트">
+      <option name="closed" value="true" />
+      <created>1732347195552</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1732347195552</updated>
+    </task>
+    <task id="LOCAL-00042" summary="feat : 수익률 계산하기">
+      <option name="closed" value="true" />
+      <created>1732347610460</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1732347610460</updated>
+    </task>
+    <task id="LOCAL-00043" summary="feat : 구매 금액 입력받기">
+      <option name="closed" value="true" />
+      <created>1732349955624</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1732349955624</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="문제 업로드" />
-    <MESSAGE value="feat : Application 메인 컨트롤러 연결" />
-    <MESSAGE value="chore : 컨트롤러 패키지 생성" />
-    <MESSAGE value="feat : 계산 숫자 저장 객체 생성" />
-    <MESSAGE value="feat : 계산기 인터페이스 생성" />
-    <MESSAGE value="feat : 더하기 계산기 클래스 생성" />
-    <MESSAGE value="test : 더하기 계산기 테스트" />
-    <MESSAGE value="feat : 구분자 파싱 인터페이스 생성" />
-    <MESSAGE value="feat : 기본 구분자 파싱 로직 구현" />
-    <MESSAGE value="test : 기본 구분자 파싱 로직 테스트" />
-    <MESSAGE value="feat : 커스텀 구분자 파싱 로직 구현" />
-    <MESSAGE value="feat : 커스텀 구분자 파싱 로직 테스트" />
-    <MESSAGE value="feat : 이스케이스 문자 처리 로직 추가" />
-    <MESSAGE value="test : 이스케이스 문자 처리 테스트" />
-    <MESSAGE value="feat : 입력 문자열에 따라 parser 반환하기" />
     <MESSAGE value="test : 입력 문자열에 따라 parser 반환하기 테스트" />
     <MESSAGE value="feat : parser 종류 Enum으로 상수화 및 내부에서 Enum 반환하기" />
     <MESSAGE value="fix : 커스텀 구분자 양식 정규식 수정" />
@@ -493,7 +649,22 @@
     <MESSAGE value="refactor : Parser 추상클래스로 구현" />
     <MESSAGE value="refactor : 구분자 등록 입력 양식 상수화" />
     <MESSAGE value="style : 줄간격 조정 및 패키지 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="style : 줄간격 조정 및 패키지 변경" />
+    <MESSAGE value="문제 업로드" />
+    <MESSAGE value="feat : 사용자 로또 객체 생성" />
+    <MESSAGE value="feat : 입력값 정수 리스트 변경 Parser 작성" />
+    <MESSAGE value="test : 입력값 정수 리스트 변경 Parser 테스트" />
+    <MESSAGE value="feat : 로또 티켓 객체 생성" />
+    <MESSAGE value="feat : Wallet 객체 생성" />
+    <MESSAGE value="test : Wallet 객체 데스트" />
+    <MESSAGE value="feat : 컴퓨터 로또 생성" />
+    <MESSAGE value="test : 컴퓨터 로또 생성 테스트" />
+    <MESSAGE value="feat : 로또 당첨 순위 Enum 작성" />
+    <MESSAGE value="feat : 컴퓨터, 사용자 로또 매칭" />
+    <MESSAGE value="feat : 컴퓨터, 사용자 로또 매칭 결과 업데이트" />
+    <MESSAGE value="test : 컴퓨터, 사용자 로또 매칭 결과 업데이트 테스트" />
+    <MESSAGE value="feat : 수익률 계산하기" />
+    <MESSAGE value="feat : 구매 금액 입력받기" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 구매 금액 입력받기" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

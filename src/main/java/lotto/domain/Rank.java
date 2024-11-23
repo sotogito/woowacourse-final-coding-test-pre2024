@@ -1,21 +1,23 @@
 package lotto.domain;
 
+import java.util.EnumMap;
+
 public enum Rank {
-    FIFTH(5, 3, false, 5000L, "오천"),
-    FOURTH(4, 4, false, 50000L, "오만"),
-    THIRD(3, 5, false, 1500000L, "백오십만"),
-    SECOND(2, 5, true, 30000000L, "삼천만"),
-    FIRST(1, 6, false, 2000000000L, "이십억"),
-    NOTHING(-1, 0, false, 0L, "영");
+    FIFTH(5, 3, false, 5000, "오천"),
+    FOURTH(4, 4, false, 50000, "오만"),
+    THIRD(3, 5, false, 1500000, "백오십만"),
+    SECOND(2, 5, true, 30000000, "삼천만"),
+    FIRST(1, 6, false, 2000000000, "이십억"),
+    NOTHING(-1, 0, false, 0, "영");
 
     private final int rank;
     private final int matchCount;
     private final boolean hasBonus;
-    private final Long prizeMoney;
+    private final int prizeMoney;
     private final String prizeMoneyKorean;
 
     Rank(int rank, int matchCount, boolean hasBonus,
-         Long prizeMoney, String prizeMoneyKorean) {
+         int prizeMoney, String prizeMoneyKorean) {
         this.hasBonus = hasBonus;
         this.rank = rank;
         this.matchCount = matchCount;
@@ -41,7 +43,16 @@ public enum Rank {
         return matchCount;
     }
 
-    public Long getPrizeMoney() {
+    public int getPrizeMoney() {
         return prizeMoney;
+    }
+
+    public static EnumMap<Rank, Integer> initScores() {
+        EnumMap<Rank, Integer> map = new EnumMap<>(Rank.class);
+        for (Rank rank : values()) {
+            map.put(rank, 0);
+        }
+
+        return map;
     }
 }
