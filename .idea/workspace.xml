@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d46770dd-d808-493b-9538-a8cb5fe4cdaf" name="Changes" comment="style : 줄간격 조정 및 패키지 변경" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="java-calculator" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="1-calculator-7" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2p91esBedu5D1l5tq4cfhzZfoQo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AddCalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ApplicationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ApplicationTest.기본_구분자_사용.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ApplicationTest.예외_테스트.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicParserTest.기본_구분자_파싱_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicParserTest.음수_숫자_포함_예외_처리.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.기본_구분자_파싱_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.메타_문자_계산_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.메타_문자_여러개_계산_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.음수_숫자_포함_예외_처리.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.한개_이상_커스텀_구분자_계산_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.InputValueMatcherTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.woowacourse-final-coding-test-pre2024 [:Application.main()].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.woowacourse-final-coding-test-pre2024 [:CustomParser.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="calculator.domain" />
+      <recent name="calculator.domain.parsers" />
+      <recent name="calculator.domain.calculator" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.lotto.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="calculator.Application" />
+      <module name="java-calculator.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="calculator.domain.constants.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lotto.Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lotto.Application" />
+      <module name="java-lotto.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lotto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;calculator.ApplicationTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ApplicationTest.예외_테스트" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;calculator.ApplicationTest.예외_테스트&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ApplicationTest.기본_구분자_사용" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;calculator.ApplicationTest.기본_구분자_사용&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.lotto.Application" />
+        <item itemvalue="Gradle.ApplicationTest" />
+        <item itemvalue="Gradle.ApplicationTest.예외_테스트" />
+        <item itemvalue="Gradle.ApplicationTest.기본_구분자_사용" />
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d46770dd-d808-493b-9538-a8cb5fe4cdaf" name="Changes" comment="" />
+      <created>1732163575778</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732163575778</updated>
+      <workItem from="1732163576846" duration="251000" />
+      <workItem from="1732163954865" duration="242000" />
+      <workItem from="1732164243160" duration="16604000" />
+      <workItem from="1732247809867" duration="8000" />
+      <workItem from="1732339463355" duration="78000" />
+    </task>
+    <task id="LOCAL-00001" summary="README 첨부">
+      <option name="closed" value="true" />
+      <created>1732163617475</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732163617475</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat : 컨트롤러 생성">
+      <option name="closed" value="true" />
+      <created>1732164070275</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732164070275</updated>
+    </task>
+    <task id="LOCAL-00003" summary="문제 업로드">
+      <option name="closed" value="true" />
+      <created>1732164362905</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732164362905</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat : Application 메인 컨트롤러 연결">
+      <option name="closed" value="true" />
+      <created>1732164416259</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732164416259</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chore : 컨트롤러 패키지 생성">
+      <option name="closed" value="true" />
+      <created>1732164608771</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732164608771</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat : 계산 숫자 저장 객체 생성">
+      <option name="closed" value="true" />
+      <created>1732169144054</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732169144054</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat : 계산기 인터페이스 생성">
+      <option name="closed" value="true" />
+      <created>1732169155359</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732169155359</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat : 더하기 계산기 클래스 생성">
+      <option name="closed" value="true" />
+      <created>1732169162541</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732169162541</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test : 더하기 계산기 테스트">
+      <option name="closed" value="true" />
+      <created>1732169170897</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732169170897</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat : 구분자 파싱 인터페이스 생성">
+      <option name="closed" value="true" />
+      <created>1732169660907</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732169660907</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat : 기본 구분자 파싱 로직 구현">
+      <option name="closed" value="true" />
+      <created>1732169686477</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732169686477</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test : 기본 구분자 파싱 로직 테스트">
+      <option name="closed" value="true" />
+      <created>1732169694142</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732169694142</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat : 커스텀 구분자 파싱 로직 구현">
+      <option name="closed" value="true" />
+      <created>1732171098719</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732171098719</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat : 커스텀 구분자 파싱 로직 테스트">
+      <option name="closed" value="true" />
+      <created>1732171108232</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1732171108232</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat : 이스케이스 문자 처리 로직 추가">
+      <option name="closed" value="true" />
+      <created>1732171962290</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1732171962290</updated>
+    </task>
+    <task id="LOCAL-00016" summary="test : 이스케이스 문자 처리 테스트">
+      <option name="closed" value="true" />
+      <created>1732171970889</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1732171970889</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat : 입력 문자열에 따라 parser 반환하기">
+      <option name="closed" value="true" />
+      <created>1732172997189</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1732172997189</updated>
+    </task>
+    <task id="LOCAL-00018" summary="test : 입력 문자열에 따라 parser 반환하기 테스트">
+      <option name="closed" value="true" />
+      <created>1732173003258</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1732173003259</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat : parser 종류 Enum으로 상수화 및 내부에서 Enum 반환하기">
+      <option name="closed" value="true" />
+      <created>1732173044910</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1732173044910</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix : 커스텀 구분자 양식 정규식 수정">
+      <option name="closed" value="true" />
+      <created>1732174101411</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1732174101411</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat : 식 입력받기 컨트롤러 로직">
+      <option name="closed" value="true" />
+      <created>1732174266339</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1732174266339</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat : 결과 출력">
+      <option name="closed" value="true" />
+      <created>1732174656463</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1732174656463</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat : 문자가 아닌 문자열도 CustomParser넘기기 정규식 수정">
+      <option name="closed" value="true" />
+      <created>1732174848942</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1732174848942</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat : 문자열 입력시 예외처리 추가">
+      <option name="closed" value="true" />
+      <created>1732174996092</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1732174996092</updated>
+    </task>
+    <task id="LOCAL-00025" summary="refactor : Parser 추상클래스로 구현">
+      <option name="closed" value="true" />
+      <created>1732176382298</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1732176382298</updated>
+    </task>
+    <task id="LOCAL-00026" summary="refactor : 구분자 등록 입력 양식 상수화">
+      <option name="closed" value="true" />
+      <created>1732180019453</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1732180019453</updated>
+    </task>
+    <task id="LOCAL-00027" summary="style : 줄간격 조정 및 패키지 변경">
+      <option name="closed" value="true" />
+      <created>1732180189270</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1732180189270</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="문제 업로드" />
+    <MESSAGE value="feat : Application 메인 컨트롤러 연결" />
+    <MESSAGE value="chore : 컨트롤러 패키지 생성" />
+    <MESSAGE value="feat : 계산 숫자 저장 객체 생성" />
+    <MESSAGE value="feat : 계산기 인터페이스 생성" />
+    <MESSAGE value="feat : 더하기 계산기 클래스 생성" />
+    <MESSAGE value="test : 더하기 계산기 테스트" />
+    <MESSAGE value="feat : 구분자 파싱 인터페이스 생성" />
+    <MESSAGE value="feat : 기본 구분자 파싱 로직 구현" />
+    <MESSAGE value="test : 기본 구분자 파싱 로직 테스트" />
+    <MESSAGE value="feat : 커스텀 구분자 파싱 로직 구현" />
+    <MESSAGE value="feat : 커스텀 구분자 파싱 로직 테스트" />
+    <MESSAGE value="feat : 이스케이스 문자 처리 로직 추가" />
+    <MESSAGE value="test : 이스케이스 문자 처리 테스트" />
+    <MESSAGE value="feat : 입력 문자열에 따라 parser 반환하기" />
+    <MESSAGE value="test : 입력 문자열에 따라 parser 반환하기 테스트" />
+    <MESSAGE value="feat : parser 종류 Enum으로 상수화 및 내부에서 Enum 반환하기" />
+    <MESSAGE value="fix : 커스텀 구분자 양식 정규식 수정" />
+    <MESSAGE value="feat : 식 입력받기 컨트롤러 로직" />
+    <MESSAGE value="feat : 결과 출력" />
+    <MESSAGE value="feat : 문자가 아닌 문자열도 CustomParser넘기기 정규식 수정" />
+    <MESSAGE value="feat : 문자열 입력시 예외처리 추가" />
+    <MESSAGE value="refactor : Parser 추상클래스로 구현" />
+    <MESSAGE value="refactor : 구분자 등록 입력 양식 상수화" />
+    <MESSAGE value="style : 줄간격 조정 및 패키지 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="style : 줄간격 조정 및 패키지 변경" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
