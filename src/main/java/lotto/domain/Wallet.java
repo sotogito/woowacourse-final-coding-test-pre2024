@@ -2,11 +2,21 @@ package lotto.domain;
 
 public class Wallet {
     private final int amount;
+    private float rateOfReturn;
 
     public Wallet(int amount) {
         validateMinimum(amount);
         validateUnit(amount);
         this.amount = amount;
+        this.rateOfReturn = 0;
+    }
+
+    public float getRateOfReturn() {
+        return rateOfReturn;
+    }
+
+    public void calculateRateOfReturn(RateOfReturnCalculator calculator, int prizeAmount) {
+        rateOfReturn = calculator.calculate(amount, prizeAmount);
     }
 
     private void validateMinimum(int amount) {

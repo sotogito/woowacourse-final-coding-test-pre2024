@@ -3,6 +3,7 @@ package lotto.service;
 import java.util.List;
 import lotto.domain.ComputerLotto;
 import lotto.domain.LottoMatcher;
+import lotto.domain.RateOfReturnCalculator;
 import lotto.domain.ScoreManager;
 import lotto.domain.Ticket;
 import lotto.domain.UserLotto;
@@ -17,6 +18,7 @@ public class LottoStoreService {
     private final LottoMachine lottoMachine;
     private final LottoMatcher lottoMatcher;
     private final ScoreManager scoreManager;
+    private final RateOfReturnCalculator rateOfReturnCalculator;
 
     public LottoStoreService(ComputerLotto computerLotto, Ticket ticket) {
         this.computerLotto = computerLotto;
@@ -24,6 +26,7 @@ public class LottoStoreService {
         this.lottoMachine = new ComputerLottoMachine();
         this.lottoMatcher = new LottoMatcher();
         this.scoreManager = new ScoreManager();
+        this.rateOfReturnCalculator = new RateOfReturnCalculator();
     }
 
     public void buyLottos(Wallet wallet) {
@@ -40,19 +43,13 @@ public class LottoStoreService {
     }
 
     public void matchLotto(UserLotto userLotto) {
-        /**
-         * 랜덤 로또에 사용자 로또를 넘겨주고 매칭
-         * 로또 매칭 레코드로 결과 반환
-         *
-         *
-         */
-
         List<LottoMatchingForm> matchingResult = computerLotto.matchLotto(lottoMatcher, userLotto);
         scoreManager.addMatchingResult(matchingResult);
     }
 
-    public void calculateRateOfReturn() {
+    public void calculateRateOfReturn(Wallet wallet) {
         int totalWinningPrize = scoreManager.calculateWinningPrize();
+        wallet.calculateTicket(ticket);
     }
 
 
