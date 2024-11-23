@@ -15,6 +15,16 @@ public class Lotto {
         return numbers.contains(number);
     }
 
+    public int getCountMatchedSixLotto(final Lotto otherLotto) {
+        int count = 0;
+        for (Integer number : numbers) {
+            if (otherLotto.numbers.contains(number)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     private void validateSize(List<Integer> numbers) {
         if (numbers.size() != 6) {
             throw new IllegalArgumentException("로또 번호는 6개여야 합니다.");
