@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import lotto.domain.lotto.Lotto;
 import lotto.domain.number.LottoMachine;
+import lotto.domain.record.LottoMatchingForm;
 
 public class ComputerLotto {
     private final List<Lotto> lottos;
@@ -11,6 +12,11 @@ public class ComputerLotto {
     public ComputerLotto() {
         this.lottos = new ArrayList<>();
     }
+
+    public List<LottoMatchingForm> matchLotto(LottoMatcher lottoMatcher, final UserLotto userLotto) {
+        return lottoMatcher.match(lottos, userLotto);
+    }
+
 
     public void makeLotto(LottoMachine lottoMachine, Ticket ticket) {
         while (!ticket.isEnd()) {
@@ -22,10 +28,5 @@ public class ComputerLotto {
     public int lottoNumbers() {
         return lottos.size();
     }
-
-    public void addLotto(Lotto lotto) {
-        lottos.add(lotto);
-    }
-
 
 }
