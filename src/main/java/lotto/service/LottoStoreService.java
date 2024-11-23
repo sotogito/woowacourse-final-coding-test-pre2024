@@ -42,10 +42,12 @@ public class LottoStoreService {
         wallet.calculateTicket(ticket);
     }
 
+
     public void matchLotto(UserLotto userLotto) {
         List<LottoMatchingForm> matchingResult = computerLotto.matchLotto(lottoMatcher, userLotto);
         scoreManager.addMatchingResult(matchingResult);
     }
+
 
     public void calculateRateOfReturn(Wallet wallet) {
         int totalWinningPrize = scoreManager.calculateWinningPrize();

@@ -29,4 +29,14 @@ public class ComputerLotto {
         return lottos.size();
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Lotto lotto : lottos) {
+            sb.append(lotto.toString());
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
 }
