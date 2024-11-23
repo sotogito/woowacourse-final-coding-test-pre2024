@@ -12,7 +12,7 @@ import lotto.domain.number.ComputerLottoMachine;
 import lotto.domain.number.LottoMachine;
 import lotto.domain.record.LottoMatchingForm;
 
-public class LottoStoreService {
+public class LottoStoreService implements LottoStore {
     private final Ticket ticket;
     private final ComputerLotto computerLotto;
     private final LottoMachine lottoMachine;
@@ -20,15 +20,16 @@ public class LottoStoreService {
     private final ScoreManager scoreManager;
     private final RateOfReturnCalculator rateOfReturnCalculator;
 
-    public LottoStoreService(ComputerLotto computerLotto, Ticket ticket) {
+    public LottoStoreService(ComputerLotto computerLotto, ScoreManager scoreManager) {
         this.computerLotto = computerLotto;
-        this.ticket = ticket;
+        this.ticket = new Ticket();
         this.lottoMachine = new ComputerLottoMachine();
         this.lottoMatcher = new LottoMatcher();
-        this.scoreManager = new ScoreManager();
+        this.scoreManager = scoreManager;
         this.rateOfReturnCalculator = new RateOfReturnCalculator();
     }
 
+    @Override
     public void buyLottos(Wallet wallet) {
         buyTicket(wallet);
         makeRandomLottos();
@@ -43,15 +44,17 @@ public class LottoStoreService {
     }
 
 
+    @Override
     public void matchLotto(UserLotto userLotto) {
         List<LottoMatchingForm> matchingResult = computerLotto.matchLotto(lottoMatcher, userLotto);
         scoreManager.addMatchingResult(matchingResult);
     }
 
 
+    @Override
     public void calculateRateOfReturn(Wallet wallet) {
         int totalWinningPrize = scoreManager.calculateWinningPrize();
-        wallet.calculateTicket(ticket);
+        wallet.calculateRateOfReturn(rateOfReturnCalculator, totalWinningPrize);
     }
 
 
