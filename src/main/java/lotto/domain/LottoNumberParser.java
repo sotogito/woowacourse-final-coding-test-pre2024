@@ -10,6 +10,21 @@ public class LottoNumberParser {
      * 콤마 외 다른 문자 Input : 숫자
      */
 
+    /*
+    public List<Integer> parse(String input) {
+        List<Integer> numbers = new ArrayList<>();
+
+        Matcher matcher = Pattern.compile("(.),(.),(.),(.),(.),(.)").matcher(input);
+
+        while (matcher.find()) {
+            for (int i = 1; i <= matcher.groupCount(); i++) {
+                numbers.add(Integer.parseInt(matcher.group(i)));
+            }
+        }
+        return numbers;
+    }
+
+     */
     public List<Integer> parse(String input) {
         List<Integer> result = new ArrayList<>();
 
@@ -27,6 +42,7 @@ public class LottoNumberParser {
 
         return result;
     }
+
 
     private void validateNameSpecialChar(String name) {
         Matcher matcher = Pattern.compile("[!@#$%^&*().?\":{}|<>]").matcher(name);

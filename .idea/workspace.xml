@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d46770dd-d808-493b-9538-a8cb5fe4cdaf" name="Changes" comment="feat : 구매 금액 입력받기">
-      <change afterPath="$PROJECT_DIR$/docs/NOTE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lotto/controller/LottoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lotto/service/LottoStore.java" afterDir="false" />
+    <list default="true" id="d46770dd-d808-493b-9538-a8cb5fe4cdaf" name="Changes" comment="feat : 로또 매칭 결과 출력">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/Lotto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/domain/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lotto/domain/Rank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/service/LottoStoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lotto/service/LottoStoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/view/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lotto/view/Output.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/domain/LottoNumberParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lotto/domain/LottoNumberParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +139,7 @@
       <recent name="calculator.domain.calculator" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'java-lotto.test'">
+  <component name="RunManager" selected="Gradle.ApplicationTest">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lotto.Application" />
       <module name="java-lotto.main" />
@@ -257,8 +249,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'java-lotto.test'" />
         <item itemvalue="Gradle.ApplicationTest" />
+        <item itemvalue="Gradle.Tests in 'java-lotto.test'" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Gradle.ScoreManagerTest" />
         <item itemvalue="Gradle.ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인" />
@@ -286,7 +278,7 @@
       <workItem from="1732164243160" duration="16604000" />
       <workItem from="1732247809867" duration="8000" />
       <workItem from="1732339463355" duration="78000" />
-      <workItem from="1732339566067" duration="11072000" />
+      <workItem from="1732339566067" duration="13703000" />
     </task>
     <task id="LOCAL-00001" summary="README 첨부">
       <option name="closed" value="true" />
@@ -632,15 +624,29 @@
       <option name="project" value="LOCAL" />
       <updated>1732349955624</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="feat : 로또 서비스 인퍼테이스 선언">
+      <option name="closed" value="true" />
+      <created>1732350980359</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1732350980359</updated>
+    </task>
+    <task id="LOCAL-00045" summary="feat : 로또 매칭 결과 출력">
+      <option name="closed" value="true" />
+      <created>1732350988642</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1732350988642</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test : 입력 문자열에 따라 parser 반환하기 테스트" />
-    <MESSAGE value="feat : parser 종류 Enum으로 상수화 및 내부에서 Enum 반환하기" />
     <MESSAGE value="fix : 커스텀 구분자 양식 정규식 수정" />
     <MESSAGE value="feat : 식 입력받기 컨트롤러 로직" />
     <MESSAGE value="feat : 결과 출력" />
@@ -664,7 +670,9 @@
     <MESSAGE value="test : 컴퓨터, 사용자 로또 매칭 결과 업데이트 테스트" />
     <MESSAGE value="feat : 수익률 계산하기" />
     <MESSAGE value="feat : 구매 금액 입력받기" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 구매 금액 입력받기" />
+    <MESSAGE value="feat : 로또 서비스 인퍼테이스 선언" />
+    <MESSAGE value="feat : 로또 매칭 결과 출력" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 로또 매칭 결과 출력" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
