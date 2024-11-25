@@ -20,10 +20,40 @@ public class VendingMachine {
         this.products = new Products();
     }
 
+    public EnumMap<Coin, Integer> calculateReturnChange(int amount) {
+        EnumMap<Coin, Integer> result = new EnumMap<>(Coin.class);
+
+        for (EnumMap.Entry<Coin, Integer> entry : coins.entrySet()) {
+            Coin coin = entry.getKey();
+            int coinAmount = coin.getAmount();
+            int haveCoinCount = entry.getValue();
+            int maxCoinCount = amount / coinAmount;
+
+            if (maxCoinCount > haveCoinCount) {
+                maxCoinCount = haveCoinCount;
+            }
+            if (maxCoinCount == 0) {
+                continue;
+            }
+            result.put(coin, maxCoinCount);
+            amount -= (coinAmount * maxCoinCount);
+        }
+        return result;
+    }
+
+
+    public Product findProductByName(String name) {
+        return products.findProductByName(name);
+    }
+
     //todo while(isOverMinimumPriceProduct)
     public boolean isOverMinimumPriceProduct(int purchaseAmount) {
         Product minPriceProduct = products.minimumPriceProduct();
         return minPriceProduct.isOver(purchaseAmount);
+    }
+
+    public boolean isAllProductsSoldOut() {
+        return products.isAllProductSoldOut();
     }
 
     public void addAllProducts(List<Product> newProducts) {
