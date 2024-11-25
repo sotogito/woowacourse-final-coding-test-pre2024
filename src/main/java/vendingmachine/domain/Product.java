@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Product implements Comparable<Product> {
     private final String name;
     private final int price;
-    private final int quantity;
+    private int quantity;
 
     public Product(String name, int price, int quantity) {
         validateMinPrice(price);
@@ -13,6 +13,14 @@ public class Product implements Comparable<Product> {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+    }
+
+    public boolean isSameName(String orderName) {
+        return this.name.equals(orderName);
+    }
+
+    public void decreaseQuantity(int orderQuantity) {
+        quantity -= orderQuantity;
     }
 
     public boolean isOver(final int purchaseAmount) {
@@ -47,6 +55,10 @@ public class Product implements Comparable<Product> {
         }
         Product product = (Product) o;
         return Objects.equals(name, product.name);
+    }
+
+    public int getPrice() {
+        return price;
     }
 
     @Override

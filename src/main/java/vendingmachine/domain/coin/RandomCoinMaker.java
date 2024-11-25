@@ -1,4 +1,4 @@
-package vendingmachine.domain;
+package vendingmachine.domain.coin;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.EnumMap;

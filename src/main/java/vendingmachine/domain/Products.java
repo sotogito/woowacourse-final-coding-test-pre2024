@@ -12,7 +12,16 @@ public class Products {
     public Products() {
         this.products = new ArrayList<>();
     }
-    
+
+    public Product findProductByName(String name) {
+        for (Product product : products) {
+            if (product.isSameName(name)) {
+                return product;
+            }
+        }
+        throw new IllegalArgumentException("존재하지 않는 상품입니다.");
+    }
+
     public Product minimumPriceProduct() {
         List<Product> withoutSoldOut = new ArrayList<>();
         for (Product product : products) {
@@ -21,6 +30,18 @@ public class Products {
             }
         }
         return Collections.min(withoutSoldOut);
+    }
+
+    public boolean isAllProductSoldOut() {
+        boolean isAllSoldOut = true;
+
+        for (Product product : products) {
+            if (!product.isSoldOut()) {
+                isAllSoldOut = false;
+                return isAllSoldOut;
+            }
+        }
+        return isAllSoldOut;
     }
 
     public void addAllProducts(List<Product> products) {
