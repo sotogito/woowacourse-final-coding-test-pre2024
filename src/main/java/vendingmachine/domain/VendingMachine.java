@@ -1,7 +1,6 @@
 package vendingmachine.domain;
 
 import java.util.EnumMap;
-import java.util.LinkedList;
 import java.util.List;
 import vendingmachine.domain.coin.Coin;
 import vendingmachine.domain.coin.RandomCoinMaker;
@@ -13,16 +12,22 @@ public class VendingMachine {
     private int amount;
     private final EnumMap<Coin, Integer> coins;
 
-    private final List<Product> products;
+    private final Products products;
 
     public VendingMachine() {
         this.coinMaker = new RandomCoinMaker();
         this.coins = Coin.init();
-        this.products = new LinkedList<>();
+        this.products = new Products();
     }
 
-    public void addAllProducts(List<Product> products) {
-        this.products.addAll(products);
+    //todo while(isOverMinimumPriceProduct)
+    public boolean isOverMinimumPriceProduct(int purchaseAmount) {
+        Product minPriceProduct = products.minimumPriceProduct();
+        return minPriceProduct.isOver(purchaseAmount);
+    }
+
+    public void addAllProducts(List<Product> newProducts) {
+        products.addAllProducts(newProducts);
     }
 
     public void setAmount(int amount) {
