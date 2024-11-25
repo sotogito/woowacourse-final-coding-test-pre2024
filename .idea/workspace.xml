@@ -136,7 +136,7 @@
       <recent name="calculator.domain.calculator" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ApplicationTest">
+  <component name="RunManager" selected="Gradle.LottoTest">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lotto.Application" />
       <module name="java-lotto.main" />
@@ -174,6 +174,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="LottoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;lotto.LottoTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="ScoreManagerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -188,30 +212,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;lotto.domain.ScoreManagerTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;lotto.domain.ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -246,11 +246,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LottoTest" />
         <item itemvalue="Gradle.ApplicationTest" />
         <item itemvalue="Gradle.Tests in 'java-lotto.test'" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Gradle.ScoreManagerTest" />
-        <item itemvalue="Gradle.ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인" />
       </list>
     </recent_temporary>
   </component>
