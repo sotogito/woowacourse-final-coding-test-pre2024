@@ -3,16 +3,15 @@ package vendingmachine.domain;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Optional;
+import vendingmachine.domain.cashier.Cashier;
 import vendingmachine.domain.coin.Coin;
 import vendingmachine.domain.coin.RandomCoinMaker;
 import vendingmachine.domain.coin.VendingMachineCoinMaker;
 
 public class VendingMachine {
     private final VendingMachineCoinMaker coinMaker;
-
     private int amount;
     private final EnumMap<Coin, Integer> coins;
-
     private final Products products;
 
     public VendingMachine() {
@@ -25,26 +24,8 @@ public class VendingMachine {
         coinMaker.make(amount, coins);
     }
 
-    public EnumMap<Coin, Integer> calculateReturnChange(int amount) {
-        EnumMap<Coin, Integer> result = new EnumMap<>(Coin.class);
-
-        for (EnumMap.Entry<Coin, Integer> entry : coins.entrySet()) {
-            Coin coin = entry.getKey();
-            int coinAmount = coin.getAmount();
-            int haveCoinCount = entry.getValue();
-            int maxCoinCount = amount / coinAmount;
-
-            if (maxCoinCount > haveCoinCount) {
-                maxCoinCount = haveCoinCount;
-            }
-            if (maxCoinCount == 0) {
-                continue;
-            }
-            coins.put(coin, coins.get(coin) - maxCoinCount);
-            result.put(coin, maxCoinCount);
-            amount -= (coinAmount * maxCoinCount);
-        }
-        return result;
+    public EnumMap<Coin, Integer> calculateReturnChange(int amount, Cashier cashier) {
+        return cashier.getChange(amount, coins);
     }
 
 

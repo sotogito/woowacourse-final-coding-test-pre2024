@@ -4,15 +4,19 @@ import java.util.EnumMap;
 import vendingmachine.domain.Product;
 import vendingmachine.domain.VendingMachine;
 import vendingmachine.domain.Wallet;
+import vendingmachine.domain.cashier.Cashier;
+import vendingmachine.domain.cashier.MinimumChangeCashier;
 import vendingmachine.domain.coin.Coin;
 
 public class OrderService {
     private final VendingMachine vendingMachine;
     private final Wallet wallet;
+    private final Cashier cashier;
 
     public OrderService(VendingMachine vendingMachine, Wallet wallet) {
         this.vendingMachine = vendingMachine;
         this.wallet = wallet;
+        this.cashier = new MinimumChangeCashier();
     }
 
 
@@ -35,7 +39,7 @@ public class OrderService {
     }
 
     public EnumMap<Coin, Integer> calculateReturnChange() {
-        return wallet.getReturnChange(vendingMachine);
+        return wallet.getReturnChange(vendingMachine, cashier);
     }
 
 }
