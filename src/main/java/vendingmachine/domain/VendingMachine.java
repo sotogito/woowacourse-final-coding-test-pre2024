@@ -2,6 +2,7 @@ package vendingmachine.domain;
 
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Optional;
 import vendingmachine.domain.coin.Coin;
 import vendingmachine.domain.coin.RandomCoinMaker;
 import vendingmachine.domain.coin.VendingMachineCoinMaker;
@@ -20,6 +21,10 @@ public class VendingMachine {
         this.products = new Products();
     }
 
+    public void makeCoin() {
+        coinMaker.make(amount, coins);
+    }
+
     public EnumMap<Coin, Integer> calculateReturnChange(int amount) {
         EnumMap<Coin, Integer> result = new EnumMap<>(Coin.class);
 
@@ -35,6 +40,7 @@ public class VendingMachine {
             if (maxCoinCount == 0) {
                 continue;
             }
+            coins.put(coin, coins.get(coin) - maxCoinCount);
             result.put(coin, maxCoinCount);
             amount -= (coinAmount * maxCoinCount);
         }
@@ -48,8 +54,11 @@ public class VendingMachine {
 
     //todo while(isOverMinimumPriceProduct)
     public boolean isOverMinimumPriceProduct(int purchaseAmount) {
-        Product minPriceProduct = products.minimumPriceProduct();
-        return minPriceProduct.isOver(purchaseAmount);
+        Optional<Product> minPriceProduct = products.minimumPriceProduct();
+        if (minPriceProduct.isPresent()) {
+            return !minPriceProduct.get().isOver(purchaseAmount);
+        }
+        return false;
     }
 
     public boolean isAllProductsSoldOut() {
@@ -66,20 +75,6 @@ public class VendingMachine {
         this.amount = amount;
     }
 
-    public void makeCoin() {
-        int totalAmount = 0;
-        for (EnumMap.Entry<Coin, Integer> entry : coinMaker.make(amount).entrySet()) {
-            Coin coin = entry.getKey();
-            int count = entry.getValue();
-            totalAmount += count * coin.getAmount();
-
-            coins.merge(coin, count, Integer::sum);
-        }
-        if (totalAmount != amount) {
-            throw new IllegalStateException("자판기 동전 생성 오류");
-        }
-    }
-
     private void validateMinAmount(int amount) {
         if (amount <= 10) {
             throw new IllegalArgumentException("자판기 보유 금액 최소 금액은 10원 입니다.");
@@ -94,10 +89,10 @@ public class VendingMachine {
 
     @Override
     public String toString() {
-        String coinPrintout = "%,d원 - %,d개\n";
+        String coinPrintout = "%d원 - %d개\n";
         StringBuilder result = new StringBuilder();
 
-        for (EnumMap.Entry<Coin, Integer> entry : coinMaker.make(amount).entrySet()) {
+        for (EnumMap.Entry<Coin, Integer> entry : coins.entrySet()) {
             int coinAmount = entry.getKey().getAmount();
             int count = entry.getValue();
             result.append(String.format(coinPrintout, coinAmount, count));

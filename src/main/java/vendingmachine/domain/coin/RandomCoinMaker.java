@@ -8,18 +8,17 @@ public class RandomCoinMaker implements VendingMachineCoinMaker {
 
 
     @Override
-    public EnumMap<Coin, Integer> make(int amount) {
-        EnumMap<Coin, Integer> result = Coin.init();
+    public EnumMap<Coin, Integer> make(int amount, EnumMap<Coin, Integer> coins) {
         List<Integer> coinAmounts = Coin.getAmountList();
 
         while (amount > 0) {
             int randomCoin = Randoms.pickNumberInList(coinAmounts);
             if (amount >= randomCoin) {
-                result.merge(Coin.findByAmount(randomCoin), 1, Integer::sum);
+                coins.merge(Coin.findByAmount(randomCoin), 1, Integer::sum);
                 amount -= randomCoin;
             }
         }
-        return result;
+        return coins;
     }
 
 
