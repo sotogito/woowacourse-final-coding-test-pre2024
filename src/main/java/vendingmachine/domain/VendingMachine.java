@@ -1,6 +1,11 @@
 package vendingmachine.domain;
 
 import java.util.EnumMap;
+import java.util.LinkedList;
+import java.util.List;
+import vendingmachine.domain.coin.Coin;
+import vendingmachine.domain.coin.RandomCoinMaker;
+import vendingmachine.domain.coin.VendingMachineCoinMaker;
 
 public class VendingMachine {
     private final VendingMachineCoinMaker coinMaker;
@@ -8,9 +13,16 @@ public class VendingMachine {
     private int amount;
     private final EnumMap<Coin, Integer> coins;
 
+    private final List<Product> products;
+
     public VendingMachine() {
         this.coinMaker = new RandomCoinMaker();
         this.coins = Coin.init();
+        this.products = new LinkedList<>();
+    }
+
+    public void addAllProducts(List<Product> products) {
+        this.products.addAll(products);
     }
 
     public void setAmount(int amount) {
@@ -45,5 +57,17 @@ public class VendingMachine {
         }
     }
 
+    @Override
+    public String toString() {
+        String coinPrintout = "%,d원 - %,d개\n";
+        StringBuilder result = new StringBuilder();
+
+        for (EnumMap.Entry<Coin, Integer> entry : coinMaker.make(amount).entrySet()) {
+            int coinAmount = entry.getKey().getAmount();
+            int count = entry.getValue();
+            result.append(String.format(coinPrintout, coinAmount, count));
+        }
+        return result.toString();
+    }
 
 }
