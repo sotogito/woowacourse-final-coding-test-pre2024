@@ -6,7 +6,7 @@ import java.util.EnumMap;
 public class RandomCoinMaker implements VendingMachineCoinMaker {
     @Override
     public EnumMap<Coin, Integer> make(int amount) {
-        EnumMap<Coin, Integer> result = new EnumMap<>(Coin.class);
+        EnumMap<Coin, Integer> result = Coin.init();
 
         while (amount > 0) {
             for (Coin coin : Coin.values()) {
@@ -14,10 +14,6 @@ public class RandomCoinMaker implements VendingMachineCoinMaker {
                 if (coinAmount <= amount) {
                     int maxCoinCount = amount / coinAmount;
                     int randomCount = Randoms.pickNumberInRange(0, maxCoinCount);
-
-                    if (randomCount == 0) {
-                        continue;
-                    }
 
                     result.merge(coin, randomCount, Integer::sum);
                     amount -= (randomCount * coinAmount);
