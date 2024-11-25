@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d46770dd-d808-493b-9538-a8cb5fe4cdaf" name="Changes" comment="feat : 로또 매칭 결과 출력">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lotto/domain/LottoNumberParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lotto/domain/LottoNumberParser.java" afterDir="false" />
-    </list>
+    <list default="true" id="d46770dd-d808-493b-9538-a8cb5fe4cdaf" name="Changes" comment="chore : 정규식 파싱 방식 작성" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,56 +74,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AddCalculatorTest.executor": "Run",
-    "Gradle.ApplicationTest (1).executor": "Run",
-    "Gradle.ApplicationTest.executor": "Run",
-    "Gradle.ApplicationTest.기본_구분자_사용.executor": "Run",
-    "Gradle.ApplicationTest.예외_테스트.executor": "Run",
-    "Gradle.BasicParserTest.executor": "Run",
-    "Gradle.BasicParserTest.기본_구분자_파싱_결과_확인.executor": "Run",
-    "Gradle.BasicParserTest.음수_숫자_포함_예외_처리.executor": "Run",
-    "Gradle.ComputerLottoTest.executor": "Run",
-    "Gradle.CustomParserTest.executor": "Run",
-    "Gradle.CustomParserTest.기본_구분자_파싱_결과_확인.executor": "Run",
-    "Gradle.CustomParserTest.메타_문자_계산_결과_확인.executor": "Run",
-    "Gradle.CustomParserTest.메타_문자_여러개_계산_결과_확인.executor": "Run",
-    "Gradle.CustomParserTest.음수_숫자_포함_예외_처리.executor": "Run",
-    "Gradle.CustomParserTest.한개_이상_커스텀_구분자_계산_결과_확인.executor": "Run",
-    "Gradle.InputValueMatcherTest.executor": "Run",
-    "Gradle.LottoNumberParserTest.executor": "Run",
-    "Gradle.LottoNumberParserTest.문자_예외_처리.executor": "Run",
-    "Gradle.LottoNumberParserTest.파싱_결과_확인.executor": "Run",
-    "Gradle.LottoTest.executor": "Run",
-    "Gradle.ScoreManagerTest.executor": "Run",
-    "Gradle.ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인.executor": "Run",
-    "Gradle.ScoreManagerTest.삼등_당첨_결과_최종_상금_확인.executor": "Run",
-    "Gradle.ScoreManagerTest.이등_당첨_결과_최종_상금_확인.executor": "Run",
-    "Gradle.ScoreManagerTest.한개_당첨_결과_최종_상금_확인.executor": "Run",
-    "Gradle.Tests in 'java-lotto.test'.executor": "Run",
-    "Gradle.WalletTest.executor": "Run",
-    "Gradle.WalletTest.최고금액_미달_예외_처리.executor": "Run",
-    "Gradle.woowacourse-final-coding-test-pre2024 [:Application.main()].executor": "Run",
-    "Gradle.woowacourse-final-coding-test-pre2024 [:CustomParser.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AddCalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ApplicationTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ApplicationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ApplicationTest.기본_구분자_사용.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ApplicationTest.예외_테스트.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicParserTest.기본_구분자_파싱_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicParserTest.음수_숫자_포함_예외_처리.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ComputerLottoTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.기본_구분자_파싱_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.메타_문자_계산_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.메타_문자_여러개_계산_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.음수_숫자_포함_예외_처리.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CustomParserTest.한개_이상_커스텀_구분자_계산_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.InputValueMatcherTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LottoNumberParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LottoNumberParserTest.문자_예외_처리.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LottoNumberParserTest.파싱_결과_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LottoTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScoreManagerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScoreManagerTest.동일한_랭킹_당첨_결과_최종_상금_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScoreManagerTest.삼등_당첨_결과_최종_상금_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScoreManagerTest.이등_당첨_결과_최종_상금_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScoreManagerTest.한개_당첨_결과_최종_상금_확인.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'java-lotto.test'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.WalletTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.WalletTest.최고금액_미달_예외_처리.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.woowacourse-final-coding-test-pre2024 [:Application.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.woowacourse-final-coding-test-pre2024 [:CustomParser.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -278,7 +275,7 @@
       <workItem from="1732164243160" duration="16604000" />
       <workItem from="1732247809867" duration="8000" />
       <workItem from="1732339463355" duration="78000" />
-      <workItem from="1732339566067" duration="13703000" />
+      <workItem from="1732339566067" duration="13749000" />
     </task>
     <task id="LOCAL-00001" summary="README 첨부">
       <option name="closed" value="true" />
@@ -640,14 +637,21 @@
       <option name="project" value="LOCAL" />
       <updated>1732350988642</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="chore : 정규식 파싱 방식 작성">
+      <option name="closed" value="true" />
+      <created>1732378219675</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1732378219675</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix : 커스텀 구분자 양식 정규식 수정" />
     <MESSAGE value="feat : 식 입력받기 컨트롤러 로직" />
     <MESSAGE value="feat : 결과 출력" />
     <MESSAGE value="feat : 문자가 아닌 문자열도 CustomParser넘기기 정규식 수정" />
@@ -672,7 +676,8 @@
     <MESSAGE value="feat : 구매 금액 입력받기" />
     <MESSAGE value="feat : 로또 서비스 인퍼테이스 선언" />
     <MESSAGE value="feat : 로또 매칭 결과 출력" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 로또 매칭 결과 출력" />
+    <MESSAGE value="chore : 정규식 파싱 방식 작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore : 정규식 파싱 방식 작성" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
