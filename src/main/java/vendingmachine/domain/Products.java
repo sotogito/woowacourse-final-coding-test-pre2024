@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 public class Products {
@@ -22,14 +23,17 @@ public class Products {
         throw new IllegalArgumentException("존재하지 않는 상품입니다.");
     }
 
-    public Product minimumPriceProduct() {
+    public Optional<Product> minimumPriceProduct() {
         List<Product> withoutSoldOut = new ArrayList<>();
         for (Product product : products) {
             if (!product.isSoldOut()) {
                 withoutSoldOut.add(product);
             }
         }
-        return Collections.min(withoutSoldOut);
+        if (withoutSoldOut.isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.ofNullable(Collections.min(withoutSoldOut));
     }
 
     public boolean isAllProductSoldOut() {

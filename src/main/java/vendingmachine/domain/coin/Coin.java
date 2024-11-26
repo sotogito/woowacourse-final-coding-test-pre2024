@@ -1,6 +1,8 @@
 package vendingmachine.domain.coin;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 
 public enum Coin {
     COIN_500(500),
@@ -24,6 +26,23 @@ public enum Coin {
             map.put(coin, 0);
         }
         return map;
+    }
+
+    public static List<Integer> getAmountList() {
+        List<Integer> result = new ArrayList<>();
+        for (Coin coin : Coin.values()) {
+            result.add(coin.getAmount());
+        }
+        return result;
+    }
+
+    public static Coin findByAmount(int amount) {
+        for (Coin coin : Coin.values()) {
+            if (coin.getAmount() == amount) {
+                return coin;
+            }
+        }
+        return null;
     }
 
     // 추가 기능 구현
