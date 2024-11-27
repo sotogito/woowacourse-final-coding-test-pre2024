@@ -4,15 +4,51 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bridge {
+    private final int size;
     private final List<OneBlock> bridge;
 
-    public Bridge() {
+    public Bridge(int bridgeSize) {
+        validateBridgeSize(bridgeSize);
+
+        this.size = bridgeSize;
         bridge = new ArrayList<>();
     }
 
-    public void addBlock(List<String> BridgeStates) {
-        for (String state : BridgeStates) {
-            bridge.add(new OneBlock(state));
+    public boolean canPass(String location, int order) {
+        OneBlock nowBlock = bridge.get(order);
+        nowBlock.updateState(location);
+        return nowBlock.isPass();
+    }
+
+    public List<OneBlock> getNowBridge(int order) {
+        List<OneBlock> result = new ArrayList<>();
+        for (int i = 0; i < order; i++) {
+            result.add(bridge.get(i));
+        }
+        return result;
+    }
+
+    public boolean isSameSize(int attemptOrder) {
+        return size == attemptOrder;
+    }
+
+    public void clearBridge() {
+        for (OneBlock oneBlock : bridge) {
+            oneBlock.clear();
+        }
+    }
+
+
+    public void makeBridgeBlockToSize(BridgeMaker bridgeMaker) {
+        List<String> bridgeValue = bridgeMaker.makeBridge(size);
+        for (String state : bridgeValue) {
+            bridge.add(new OneBlock(state, false));
+        }
+    }
+
+    public void validateBridgeSize(int size) {
+        if (size < 3 || size > 20) {
+            throw new IllegalArgumentException("다리 길이 사이즈는 3~20까지만 입력가능합니다.");
         }
     }
 
