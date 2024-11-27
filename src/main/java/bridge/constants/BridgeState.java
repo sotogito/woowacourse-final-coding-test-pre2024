@@ -1,26 +1,28 @@
 package bridge.constants;
 
 public enum BridgeState {
-    UP("U", 1, 0),
-    DOWN("D", 0, 1);
+    PASS("O", true),
+    FAIL("X", false);
 
-    private String answer;
-    private int randomNumber;
-    private int index;
+    private final String answer;
+    private final boolean isPass;
 
-    BridgeState(String answer, int randomNumber, int index) {
+    BridgeState(String answer, boolean isPass) {
         this.answer = answer;
-        this.randomNumber = randomNumber;
-        this.index = index;
+        this.isPass = isPass;
     }
 
-    public BridgeState find(String input) {
+    public boolean isPass() {
+        return isPass;
+    }
+
+    public static BridgeState find(String answer) {
         for (BridgeState state : BridgeState.values()) {
-            if (state.answer.equals(input)) {
+            if (state.answer.equals(answer)) {
                 return state;
             }
         }
-        throw new IllegalArgumentException("존재하는 위치가 없습니다.");
+        throw new IllegalArgumentException("존재하지 않는 유형의 입력값입니다.");
     }
 
 }
