@@ -14,6 +14,10 @@ public enum BridgeLocation {
         this.index = index;
     }
 
+    public String getAnswer() {
+        return answer;
+    }
+
     public int getIndex() {
         return index;
     }
@@ -25,15 +29,6 @@ public enum BridgeLocation {
             }
         }
         throw new IllegalStateException("다리 생성 오류");
-    }
-
-    public static void validateInput(String input) {
-        for (BridgeLocation state : BridgeLocation.values()) {
-            if (state.answer.equals(input)) {
-                return;
-            }
-        }
-        throw new IllegalArgumentException("존재하는 위치가 없습니다.");
     }
 
     public static BridgeLocation find(String input) {

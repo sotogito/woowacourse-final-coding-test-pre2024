@@ -37,17 +37,17 @@ public class BridgeGame {
         return canMove;
     }
 
-    public void move(String inputLocation) {
-        BridgeLocation.validateInput(inputLocation);
-        if (!bridge.canPass(inputLocation, attemptManager.getOrder())) {
+    public void move(BridgeLocation inputLocation) {
+        String locationValue = inputLocation.getAnswer();
+        if (!bridge.canPass(locationValue, attemptManager.getOrder())) {
             canMove = false;
         }
         attemptManager.updateOrder();
     }
 
 
-    public boolean retry(String inputWhether) {
-        if (GameWhether.isRetry(inputWhether)) {
+    public boolean retry(GameWhether inputWhether) {
+        if (inputWhether.isRetry()) {
             canMove = true;
             attemptManager.updateTotalAttempts();
             attemptManager.clearOrder();

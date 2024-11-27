@@ -13,7 +13,7 @@ public class InputView {
         try {
             return Integer.parseInt(Console.readLine());
         } catch (NumberFormatException e) {
-            throw new IllegalStateException("다리 길이는 숫자로 입력해주세요.");
+            throw new IllegalArgumentException("다리 길이는 숫자로 입력해주세요.");
         }
     }
 

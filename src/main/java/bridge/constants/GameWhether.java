@@ -12,13 +12,18 @@ public enum GameWhether {
         this.isRetry = isRetry;
     }
 
-    public static boolean isRetry(String inputAnswer) {
-        for (GameWhether answerWhether : GameWhether.values()) {
-            if (answerWhether.answer.equals(inputAnswer)) {
-                return answerWhether.isRetry;
+    public boolean isRetry() {
+        return isRetry;
+    }
+
+
+    public static GameWhether find(String String) {
+        for (GameWhether gameWhether : GameWhether.values()) {
+            if (gameWhether.answer.equals(String)) {
+                return gameWhether;
             }
         }
-        throw new IllegalArgumentException("존재하지 않는 유형의 입력값입니다.");
+        throw new IllegalArgumentException("잘못된 입력입니다.");
     }
 
 }

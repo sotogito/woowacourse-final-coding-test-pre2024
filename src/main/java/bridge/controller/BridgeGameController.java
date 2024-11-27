@@ -1,5 +1,7 @@
 package bridge.controller;
 
+import bridge.constants.BridgeLocation;
+import bridge.constants.GameWhether;
 import bridge.domain.AttemptManager;
 import bridge.domain.Bridge;
 import bridge.service.BridgeGame;
@@ -18,26 +20,58 @@ public class BridgeGameController {
 
     public void run() {
         AttemptManager attemptManager = new AttemptManager();
-        Bridge bridge = new Bridge(inputView.readBridgeSize());
+        Bridge bridge = createBridge();
         bridgeGame = new BridgeGame(bridge, attemptManager);
 
         bridgeGame.makeBridge();
 
+        //Enum으로 받아야 유효검사함
         while (true) {
-            bridgeGame.move(inputView.readMoving());
+            bridgeGame.move(inputBridgeLocation());
             outputView.printMap(bridgeGame.getNowBridge()); //서비스에서
             if (bridgeGame.isSuccess()) {
                 break;
             }
 
             if (!bridgeGame.canMove()) {
-                if (!bridgeGame.retry(inputView.readGameCommand())) {
+                if (!bridgeGame.retry(inputGameWhether())) {
                     break;
                 }
             }
         }
-        outputView.printResult(attemptManager, bridgeGame.getGameResult());
 
+        outputView.printResult(bridgeGame.getNowBridge(), attemptManager, bridgeGame.getGameResult());
+
+    }
+
+    private GameWhether inputGameWhether() {
+        while (true) {
+            try {
+                return GameWhether.find(inputView.readGameCommand());
+            } catch (IllegalArgumentException e) {
+                outputView.printError(e.getMessage());
+            }
+        }
+    }
+
+    private BridgeLocation inputBridgeLocation() {
+        while (true) {
+            try {
+                return BridgeLocation.find(inputView.readMoving());
+            } catch (IllegalArgumentException e) {
+                outputView.printError(e.getMessage());
+            }
+        }
+    }
+
+    private Bridge createBridge() {
+        while (true) {
+            try {
+                return new Bridge(inputView.readBridgeSize());
+            } catch (IllegalArgumentException e) {
+                outputView.printError(e.getMessage());
+            }
+        }
     }
 
     /*
