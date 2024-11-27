@@ -60,7 +60,7 @@ public class BridgeGame {
 
     public boolean retry(String inputWhether) {
         if (GameWhether.isRetry(inputWhether)) {
-            canMove = false;
+            canMove = true;
             attemptManager.updateTotalAttempts();
             attemptManager.clearOrder();
             bridge.clearBridge();

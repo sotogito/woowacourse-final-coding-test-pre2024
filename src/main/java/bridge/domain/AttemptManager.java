@@ -9,10 +9,6 @@ public class AttemptManager {
         this.order = 0;
     }
 
-    public void setOrder(int order) {
-        this.order = order;
-    }
-
     public void updateTotalAttempts() {
         this.totalAttempts += 1;
     }

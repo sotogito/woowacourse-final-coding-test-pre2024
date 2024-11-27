@@ -14,6 +14,15 @@ public enum BridgeLocation {
         this.index = index;
     }
 
+    public static String findValueByRandomNumber(int randomNumber) {
+        for (BridgeLocation bridgeLocation : BridgeLocation.values()) {
+            if (bridgeLocation.randomNumber == randomNumber) {
+                return bridgeLocation.answer;
+            }
+        }
+        throw new IllegalStateException("다리 생성 오류");
+    }
+
     public static void validateInput(String input) {
         for (BridgeLocation state : BridgeLocation.values()) {
             if (state.answer.equals(input)) {
