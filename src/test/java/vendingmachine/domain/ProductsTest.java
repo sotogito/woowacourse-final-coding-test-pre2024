@@ -18,7 +18,7 @@ class ProductsTest {
         productList.add(new Product("사이다", 1000, 2));
 
         products.addAllProducts(productList);
-        Product actual = products.minimumPriceProduct().get();
+        Product actual = products.minimumPriceProductWithoutSoldOut().get();
 
         assertEquals(expected, actual);
     }
@@ -32,9 +32,10 @@ class ProductsTest {
         productList.add(expected);
 
         products.addAllProducts(productList);
-        Product actual = products.minimumPriceProduct().get();
+        Product actual = products.minimumPriceProductWithoutSoldOut().get();
 
         assertEquals(expected, actual);
     }
+
 
 }

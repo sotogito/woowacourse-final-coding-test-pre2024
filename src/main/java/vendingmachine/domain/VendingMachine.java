@@ -35,7 +35,7 @@ public class VendingMachine {
 
     //todo while(isOverMinimumPriceProduct)
     public boolean isOverMinimumPriceProduct(int purchaseAmount) {
-        Optional<Product> minPriceProduct = products.minimumPriceProduct();
+        Optional<Product> minPriceProduct = products.minimumPriceProductWithoutSoldOut();
         if (minPriceProduct.isPresent()) {
             return !minPriceProduct.get().isOver(purchaseAmount);
         }

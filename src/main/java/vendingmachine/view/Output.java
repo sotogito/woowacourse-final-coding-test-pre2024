@@ -28,8 +28,6 @@ public class Output {
             int count = entry.getValue();
             System.out.printf("%d원 - %d개\n", coin, count);
         }
-
     }
-
 
 }

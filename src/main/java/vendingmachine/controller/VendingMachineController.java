@@ -19,6 +19,13 @@ public class VendingMachineController {
 
         Wallet wallet = createWallet();
         orderService = new OrderService(vendingMachine, wallet);
+        loopBuy(wallet);
+
+        Output.printBalance(wallet);
+        Output.printReturnChanges(orderService.calculateReturnChange());
+    }
+
+    private void loopBuy(Wallet wallet) {
         try {
             while (!orderService.isEndPurchase()) {
                 Output.printBalance(wallet);
@@ -27,10 +34,6 @@ public class VendingMachineController {
         } catch (IllegalArgumentException e) {
             Output.printError(e.getMessage());
         }
-
-        Output.printBalance(wallet);
-
-        Output.printReturnChanges(orderService.calculateReturnChange());
     }
 
     private void tryBuy() {
@@ -83,4 +86,5 @@ public class VendingMachineController {
             }
         }
     }
+
 }

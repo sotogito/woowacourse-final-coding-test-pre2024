@@ -6,7 +6,6 @@ import java.util.List;
 
 public class RandomCoinMaker implements VendingMachineCoinMaker {
 
-
     @Override
     public EnumMap<Coin, Integer> make(int amount, EnumMap<Coin, Integer> coins) {
         List<Integer> coinAmounts = Coin.getAmountList();
@@ -56,10 +55,10 @@ public class RandomCoinMaker implements VendingMachineCoinMaker {
                 int coinAmount = coin.getAmount();
 
                 if (coinAmount <= amount) {
-                    int maxCoinCount = amount / coinAmount;
-                    int randomCount = Randoms.pickNumberInRange(0, maxCoinCount);
+                    int maxCoinCount = amount / coinAmount; //최고 동전 개수
+                    int randomCount = Randoms.pickNumberInRange(0, maxCoinCount); //아예 갖지 않는 0과 최고 동전 개수중 랜덤
 
-                    result.merge(coin, randomCount, Integer::sum);
+                    result.merge(coin, randomCount, Integer::sum); //해당 코인과 수량을 merge로 누적
                     amount -= (randomCount * coinAmount);
                 }
             }

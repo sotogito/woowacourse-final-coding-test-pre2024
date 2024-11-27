@@ -7,21 +7,20 @@ import java.util.regex.Pattern;
 
 public class ProductParser {
 
-
     public List<Product> parse(String input) {
+        List<Product> result = new ArrayList<>();
+
         input = input.trim();
         if (input.isEmpty()) {
             throw new IllegalArgumentException("입력값이 비어있습니다.");
         }
 
-        List<Product> result = new ArrayList<>();
-
         String[] splitProducts = input.split(";");
-        Pattern pattern = Pattern.compile("\\[(.*?),(.*?),(.*?)]");
+        Pattern pattern = Pattern.compile("\\[(.*?),(.*?),(.*?)]"); //for문 밖에서
 
         for (String productForm : splitProducts) {
             productForm = productForm.trim();
-            validateForm(productForm);
+            validateForm(productForm); //양식이 지켜졌는지 세부 확인
 
             Matcher matcher = pattern.matcher(productForm);
             if (matcher.matches()) {

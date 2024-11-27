@@ -10,6 +10,7 @@ public enum Coin {
     COIN_100(100),
     COIN_50(50),
     COIN_10(10),
+    COIN_1000(1000),
     ;
 
     private final int amount;
@@ -49,11 +50,6 @@ public enum Coin {
         return null;
     }
 
-    /**
-     * 객체를 비교ㅕ하는거랑 단순히 데이터를 바교하는거랑 달라 get을 해올수있으면 comparator 내부에서 아예 지정해주기 위해서는 comporable
-     * <p>
-     * Enum은??
-     */
     public static final Comparator<Coin> BY_VALUE_ASC = Comparator.comparingInt(Coin::getAmount);
     public static final Comparator<Coin> BY_VALUE_DESC = Comparator.comparingInt(Coin::getAmount).reversed();
 

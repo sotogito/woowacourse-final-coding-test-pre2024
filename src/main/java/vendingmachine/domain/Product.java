@@ -1,5 +1,6 @@
 package vendingmachine.domain;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Product implements Comparable<Product> {
@@ -44,6 +45,15 @@ public class Product implements Comparable<Product> {
         }
     }
 
+    public static final Comparator<Product> QUANTITY_UP = Comparator.comparingInt(Product::getQuantity);
+
+    public int getPrice() {
+        return price;
+    }
+
+    private int getQuantity() {
+        return quantity;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -55,10 +65,6 @@ public class Product implements Comparable<Product> {
         }
         Product product = (Product) o;
         return Objects.equals(name, product.name);
-    }
-
-    public int getPrice() {
-        return price;
     }
 
     @Override

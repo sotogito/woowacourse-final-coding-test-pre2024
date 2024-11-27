@@ -11,7 +11,6 @@ public class VendingMachineService {
         this.vendingMachine = vendingMachine;
     }
 
-
     public void setMoney(int amount) {
         vendingMachine.setAmount(amount);
         vendingMachine.makeCoin();

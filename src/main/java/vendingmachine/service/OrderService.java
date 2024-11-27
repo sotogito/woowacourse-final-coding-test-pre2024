@@ -34,6 +34,10 @@ public class OrderService {
         if (boughtProduct.isSoldOut()) {
             throw new IllegalArgumentException("해당 상품은 재고가 없습니다.");
         }
+        updateState(boughtProduct);
+    }
+
+    private void updateState(Product boughtProduct) {
         boughtProduct.decreaseQuantity(1);
         wallet.decreaseAmount(boughtProduct);
     }

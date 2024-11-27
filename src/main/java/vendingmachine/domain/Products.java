@@ -23,14 +23,14 @@ public class Products {
         throw new IllegalArgumentException("존재하지 않는 상품입니다.");
     }
 
-    public Optional<Product> minimumPriceProduct() {
+    public Optional<Product> minimumPriceProductWithoutSoldOut() {
         List<Product> withoutSoldOut = new ArrayList<>();
         for (Product product : products) {
             if (!product.isSoldOut()) {
                 withoutSoldOut.add(product);
             }
         }
-        if (withoutSoldOut.isEmpty()) {
+        if (withoutSoldOut.isEmpty()) { //note 모두 soldout일 경우 null 반환 처리하기위함
             return Optional.empty();
         }
         return Optional.ofNullable(Collections.min(withoutSoldOut));
@@ -61,5 +61,12 @@ public class Products {
             }
         }
     }
+
+    public List<Product> getSortedProducts() {
+        List<Product> sortedProducts = new ArrayList<>(products);
+        sortedProducts.sort(Product.QUANTITY_UP);
+        return sortedProducts;
+    }
+
 
 }
