@@ -4,25 +4,30 @@ public enum BridgeState {
     PASS("O", true),
     FAIL("X", false);
 
-    private final String answer;
+    private final String mark;
     private final boolean isPass;
 
     BridgeState(String answer, boolean isPass) {
-        this.answer = answer;
+        this.mark = answer;
         this.isPass = isPass;
+    }
+
+    public String getMark() {
+        return mark;
     }
 
     public boolean isPass() {
         return isPass;
     }
 
-    public static BridgeState find(String answer) {
+
+    public static BridgeState find(Boolean isPassed) {
         for (BridgeState state : BridgeState.values()) {
-            if (state.answer.equals(answer)) {
+            if (state.isPass == isPassed) {
                 return state;
             }
         }
-        throw new IllegalArgumentException("존재하지 않는 유형의 입력값입니다.");
+        throw new IllegalStateException("다리 출력 오류");
     }
 
 }

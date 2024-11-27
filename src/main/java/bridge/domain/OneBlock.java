@@ -9,6 +9,10 @@ public class OneBlock {
         this.isPass = isPass;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
     public boolean isPass() {
         return isPass;
     }

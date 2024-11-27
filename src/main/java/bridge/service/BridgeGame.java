@@ -2,10 +2,13 @@ package bridge.service;
 
 import bridge.BridgeRandomNumberGenerator;
 import bridge.constants.BridgeLocation;
+import bridge.constants.GameState;
 import bridge.constants.GameWhether;
 import bridge.domain.AttemptManager;
 import bridge.domain.Bridge;
 import bridge.domain.BridgeMaker;
+import bridge.domain.OneBlock;
+import java.util.List;
 
 public class BridgeGame {
     private final BridgeMaker bridgeMaker;
@@ -21,21 +24,6 @@ public class BridgeGame {
         this.attemptManager = attemptManager;
     }
 
-    public static void main(String[] args) {
-        AttemptManager attemptManager = new AttemptManager();
-        Bridge bridge = new Bridge(1);
-        BridgeGame game = new BridgeGame(bridge, attemptManager);
-        game.makeBridge();
-
-        while (!game.isSuccess()) { //다 정답, 종료
-            while (game.canMove()) { //여부 물어보기
-                game.move("입력받기");
-            }
-            if (!game.retry("입력값")) {
-                break;
-            }
-        }
-    }
 
     public void makeBridge() {
         bridge.makeBridgeBlockToSize(bridgeMaker);
@@ -69,5 +57,13 @@ public class BridgeGame {
         return false;
     }
 
+    public List<OneBlock> getNowBridge() {
+        return bridge.getNowBridge(attemptManager.getOrder());
+    }
+
+    public String getGameResult() {
+        GameState gameState = GameState.find(isSuccess());
+        return gameState.getValue();
+    }
 
 }

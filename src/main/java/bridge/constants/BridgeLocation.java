@@ -14,6 +14,10 @@ public enum BridgeLocation {
         this.index = index;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
     public static String findValueByRandomNumber(int randomNumber) {
         for (BridgeLocation bridgeLocation : BridgeLocation.values()) {
             if (bridgeLocation.randomNumber == randomNumber) {
@@ -32,7 +36,7 @@ public enum BridgeLocation {
         throw new IllegalArgumentException("존재하는 위치가 없습니다.");
     }
 
-    public BridgeLocation find(String input) {
+    public static BridgeLocation find(String input) {
         for (BridgeLocation state : BridgeLocation.values()) {
             if (state.answer.equals(input)) {
                 return state;

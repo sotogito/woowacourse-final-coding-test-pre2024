@@ -25,7 +25,7 @@ public class BridgeGameController {
 
         while (true) {
             bridgeGame.move(inputView.readMoving());
-            //note 다리 출력
+            outputView.printMap(bridgeGame.getNowBridge()); //서비스에서
             if (bridgeGame.isSuccess()) {
                 break;
             }
@@ -36,7 +36,7 @@ public class BridgeGameController {
                 }
             }
         }
-        //note 결과 출력
+        outputView.printResult(attemptManager, bridgeGame.getGameResult());
 
     }
 

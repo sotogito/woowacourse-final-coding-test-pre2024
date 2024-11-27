@@ -20,14 +20,6 @@ public class Bridge {
         return nowBlock.isPass();
     }
 
-    public List<OneBlock> getNowBridge(int order) {
-        List<OneBlock> result = new ArrayList<>();
-        for (int i = 0; i < order; i++) {
-            result.add(bridge.get(i));
-        }
-        return result;
-    }
-
     public boolean isSameSize(int attemptOrder) {
         return size == attemptOrder;
     }
@@ -50,6 +42,15 @@ public class Bridge {
         if (size < 3 || size > 20) {
             throw new IllegalArgumentException("다리 길이 사이즈는 3~20까지만 입력가능합니다.");
         }
+    }
+
+
+    public List<OneBlock> getNowBridge(int order) {
+        List<OneBlock> result = new ArrayList<>();
+        for (int i = 0; i < order; i++) {
+            result.add(bridge.get(i));
+        }
+        return result;
     }
 
     /**
