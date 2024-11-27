@@ -14,6 +14,15 @@ public enum BridgeLocation {
         this.index = index;
     }
 
+    public static void validateInput(String input) {
+        for (BridgeLocation state : BridgeLocation.values()) {
+            if (state.answer.equals(input)) {
+                return;
+            }
+        }
+        throw new IllegalArgumentException("존재하는 위치가 없습니다.");
+    }
+
     public BridgeLocation find(String input) {
         for (BridgeLocation state : BridgeLocation.values()) {
             if (state.answer.equals(input)) {
