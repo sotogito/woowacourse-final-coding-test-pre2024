@@ -16,7 +16,7 @@ public class OutputView {
         System.out.printf("[ERROR] %s\n", error);
     }
 
-    public void printMap(List<OneBlock> blocks) {
+    public void printMap(List<OneBlock> blocks, AttemptManager attemptManager) {
         List<List<String>> printoutBridge = new ArrayList<>(blocks.size());
 
         for (int i = 0; i < 2; i++) {
@@ -29,13 +29,18 @@ public class OutputView {
 
         for (int i = 0; i < blocks.size(); i++) {
             OneBlock oneBlock = blocks.get(i);
-            boolean isPasses = oneBlock.isPass();
+            boolean isPassed = oneBlock.isPass();
 
             String location = oneBlock.getLocation();
+
+            if (!isPassed && i == blocks.size() - 1) {
+                location = attemptManager.getRecentLocation();
+            }
+
             BridgeLocation locationBridge = BridgeLocation.find(location);
 
-            int lineIndex = locationBridge.findBridgeBlockIndexByIsPass(isPasses);
-            String mark = BridgeState.find(isPasses).getMark();
+            int lineIndex = locationBridge.getIndex();
+            String mark = BridgeState.find(isPassed).getMark();
 
             printoutBridge.get(lineIndex).set(i, mark);
         }
@@ -57,7 +62,7 @@ public class OutputView {
      */
     public void printResult(List<OneBlock> bridge, AttemptManager attemptManager, String gameResult) {
         System.out.println("최종 게임 결과");
-        printMap(bridge);
+        printMap(bridge, attemptManager);
 
         System.out.printf("게임 성공 여부: %s\n", gameResult);
         System.out.println(attemptManager);

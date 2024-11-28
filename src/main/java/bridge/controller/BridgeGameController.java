@@ -25,23 +25,19 @@ public class BridgeGameController {
 
         bridgeGame.makeBridge();
 
-        //Enum으로 받아야 유효검사함
         while (true) {
             bridgeGame.move(inputBridgeLocation());
-            outputView.printMap(bridgeGame.getNowBridge()); //서비스에서
+            outputView.printMap(bridgeGame.getNowBridge(), attemptManager);
             if (bridgeGame.isSuccess()) {
                 break;
             }
-
             if (!bridgeGame.canMove()) {
                 if (!bridgeGame.retry(inputGameWhether())) {
                     break;
                 }
             }
         }
-
         outputView.printResult(bridgeGame.getNowBridge(), attemptManager, bridgeGame.getGameResult());
-
     }
 
     private GameWhether inputGameWhether() {
@@ -76,7 +72,7 @@ public class BridgeGameController {
 
     /*
      *
-while (!bridgeGame.isSuccess()) { //다 정답, 종료
+while (!bridgeGame.isSuccess()) {
             while (bridgeGame.canMove()) { //여부 물어보기
                 bridgeGame.move(inputView.readMoving());
 
