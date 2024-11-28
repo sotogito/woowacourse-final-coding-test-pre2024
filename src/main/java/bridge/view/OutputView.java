@@ -34,7 +34,7 @@ public class OutputView {
             String location = oneBlock.getLocation();
             BridgeLocation locationBridge = BridgeLocation.find(location);
 
-            int lineIndex = locationBridge.getIndex();
+            int lineIndex = locationBridge.findBridgeBlockIndexByIsPass(isPasses);
             String mark = BridgeState.find(isPasses).getMark();
 
             printoutBridge.get(lineIndex).set(i, mark);

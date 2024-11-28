@@ -22,6 +22,17 @@ public enum BridgeLocation {
         return index;
     }
 
+    public int findBridgeBlockIndexByIsPass(boolean isPass) {
+        if (!isPass) {
+            if (this == UP) {
+                return DOWN.index;
+            } else if (this == DOWN) {
+                return UP.index;
+            }
+        }
+        return index;
+    }
+
     public static String findValueByRandomNumber(int randomNumber) {
         for (BridgeLocation bridgeLocation : BridgeLocation.values()) {
             if (bridgeLocation.randomNumber == randomNumber) {
