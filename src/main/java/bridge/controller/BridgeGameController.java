@@ -23,23 +23,24 @@ public class BridgeGameController {
         Bridge bridge = createBridge();
         bridgeGame = new BridgeGame(bridge, attemptManager);
 
-        bridgeGame.makeBridge();
-
+        bridgeGame.makeBridge(); //note 다시 시작해도 똑같은 다리 사용
         while (true) {
-            bridgeGame.move(inputBridgeLocation());
-            outputView.printMap(bridgeGame.getNowBridge(), attemptManager);
-            if (bridgeGame.isSuccess()) {
+            bridgeGame.move(inputBridgeLocation()); //note 이동은 이동을 할 수 있던, 없던 동일한 상태 업데이트
+            outputView.printMap(bridgeGame.getNowBridge(), attemptManager); //note 이동을 할 수 없어도 다리 출력
+            if (bridgeGame.isSuccess()) { //note 가장 상위 종료 조건 - 아예 게임 종료
                 break;
             }
-            if (!bridgeGame.canMove()) {
+            if (!bridgeGame.canMove()) { //note 하위 종료 조건 - 게임 재시작or종료 여부 받음
                 if (!bridgeGame.retry(inputGameWhether())) {
                     break;
                 }
+                //note 서비스 내부에서 canMove true로 변경.
             }
         }
         outputView.printResult(bridgeGame.getNowBridge(), attemptManager, bridgeGame.getGameResult());
     }
 
+    
     private GameWhether inputGameWhether() {
         while (true) {
             try {
@@ -70,18 +71,4 @@ public class BridgeGameController {
         }
     }
 
-    /*
-     *
-while (!bridgeGame.isSuccess()) {
-            while (bridgeGame.canMove()) { //여부 물어보기
-                bridgeGame.move(inputView.readMoving());
-
-            }
-
-            if (!bridgeGame.retry(inputView.readGameCommand())) {
-                break;
-            }
-
-        }
-     */
 }
