@@ -2,8 +2,8 @@ package subway.domain;
 
 import java.util.Objects;
 
-public class Station {
-    private String name;
+public class Station implements Comparable<Station> {
+    private final String name;
 
     public Station(String name) {
         validateNameSize(name);
@@ -26,6 +26,11 @@ public class Station {
 
 
     @Override
+    public int compareTo(Station o) {
+        return this.name.compareTo(o.name);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -41,4 +46,5 @@ public class Station {
     public int hashCode() {
         return Objects.hash(name);
     }
+
 }
