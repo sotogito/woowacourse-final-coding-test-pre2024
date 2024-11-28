@@ -21,19 +21,19 @@ public class LineService {
         this.lineRepository = lineRepository;
         this.stationRepository = stationRepository;
     }
-    
+
     public void addLine(String lineName, String upStationName, String downStationName) {
         Line newLine = new Line(lineName);
         lineRepository.addLine(new Line(lineName));
 
-        Optional<Station> upStation = stationRepository.findStation(upStationName);
+        Optional<Station> upStation = stationRepository.findStationByName(upStationName);
         if (upStation.isEmpty()) {
             throw new IllegalArgumentException("존재하지 않는 상행역입니다. 등록부터 해주세요");
 
         }
         Station upFianlStation = upStation.get();
 
-        Optional<Station> downStation = stationRepository.findStation(downStationName);
+        Optional<Station> downStation = stationRepository.findStationByName(downStationName);
         if (downStation.isEmpty()) {
             throw new IllegalArgumentException("존재하지 않는 하행역입니다. 등록부터 해주세요");
         }

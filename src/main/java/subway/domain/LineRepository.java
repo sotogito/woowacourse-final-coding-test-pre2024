@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public class LineRepository {
@@ -30,6 +31,15 @@ public class LineRepository {
 
     public boolean deleteLineByName(String name) {
         return lines.removeIf(line -> Objects.equals(line.getName(), name));
+    }
+
+    public Optional<Line> findLineByName(String name) {
+        for (Line line : lines()) {
+            if (line.isSameName(name)) {
+                return Optional.of(line);
+            }
+        }
+        return Optional.empty();
     }
 
     public void hasDuplicates(List<Line> lines, Line newStation) {
