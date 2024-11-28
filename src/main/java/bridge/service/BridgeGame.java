@@ -24,25 +24,25 @@ public class BridgeGame {
         this.attemptManager = attemptManager;
     }
 
-
-    public void makeBridge() {
-        bridge.makeBridgeBlockToSize(bridgeMaker);
-    }
-
     public boolean isSuccess() {
-        return bridge.isSameSize(attemptManager.getOrder());
+        return bridge.isSameSizeAndOrder(attemptManager) && canMove;
     }
 
     public boolean canMove() {
         return canMove;
     }
 
+
+    public void makeBridge() {
+        bridge.makeBridgeBlockToSize(bridgeMaker);
+    }
+
     public void move(BridgeLocation inputLocation) {
+        attemptManager.updateOrder();
         String locationValue = inputLocation.getAnswer();
-        if (!bridge.canPass(locationValue, attemptManager.getOrder())) {
+        if (!bridge.tryPass(locationValue, attemptManager)) {
             canMove = false;
         }
-        attemptManager.updateOrder();
     }
 
 
@@ -57,8 +57,10 @@ public class BridgeGame {
         return false;
     }
 
-    public List<OneBlock> getNowBridge() {
-        return bridge.getNowBridge(attemptManager.getOrder());
+
+    //note 출력 데이터
+    public List<OneBlock> getNowBridge() { //bridge에서 바로 넘겨줘도 될듯
+        return bridge.getNowBridge(attemptManager);
     }
 
     public String getGameResult() {
