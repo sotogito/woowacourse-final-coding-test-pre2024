@@ -15,8 +15,7 @@ public enum GameWhether {
     public boolean isRetry() {
         return isRetry;
     }
-
-
+    
     public static GameWhether find(String String) {
         for (GameWhether gameWhether : GameWhether.values()) {
             if (gameWhether.answer.equals(String)) {

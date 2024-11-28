@@ -4,9 +4,9 @@ public enum BridgeLocation {
     UP("U", 1, 0),
     DOWN("D", 0, 1);
 
-    private String answer;
-    private int randomNumber;
-    private int index;
+    private final String answer;
+    private final int randomNumber;
+    private final int index;
 
     BridgeLocation(String answer, int randomNumber, int index) {
         this.answer = answer;
@@ -22,15 +22,13 @@ public enum BridgeLocation {
         return index;
     }
 
-    public int findBridgeBlockIndexByIsPass(boolean isPass) {
-        if (!isPass) {
-            if (this == UP) {
-                return DOWN.index;
-            } else if (this == DOWN) {
-                return UP.index;
+    public static BridgeLocation find(String input) {
+        for (BridgeLocation state : BridgeLocation.values()) {
+            if (state.answer.equals(input)) {
+                return state;
             }
         }
-        return index;
+        throw new IllegalArgumentException("존재하는 위치가 없습니다.");
     }
 
     public static String findValueByRandomNumber(int randomNumber) {
@@ -41,14 +39,18 @@ public enum BridgeLocation {
         }
         throw new IllegalStateException("다리 생성 오류");
     }
+    
 
-    public static BridgeLocation find(String input) {
-        for (BridgeLocation state : BridgeLocation.values()) {
-            if (state.answer.equals(input)) {
-                return state;
+    //////////////////////////////////////////////////////////
+    public int findBridgeBlockIndexByIsPass(boolean isPass) {
+        if (!isPass) {
+            if (this == UP) {
+                return DOWN.index;
+            } else if (this == DOWN) {
+                return UP.index;
             }
         }
-        throw new IllegalArgumentException("존재하는 위치가 없습니다.");
+        return index;
     }
 
 }

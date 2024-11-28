@@ -5,31 +5,31 @@ import bridge.constants.BridgeLocation;
 import bridge.constants.GameState;
 import bridge.constants.GameWhether;
 import bridge.domain.AttemptManager;
-import bridge.domain.Bridge;
 import bridge.domain.BridgeMaker;
-import bridge.domain.OneBlock;
+import bridge.domain.bridge.Bridge;
+import bridge.domain.bridge.OneBlock;
 import java.util.List;
 
 public class BridgeGame {
     private final BridgeMaker bridgeMaker;
-    private boolean canMove;
+    private boolean canMoveNow;
 
     private final Bridge bridge;
     private final AttemptManager attemptManager;
 
     public BridgeGame(Bridge bridge, AttemptManager attemptManager) {
         this.bridgeMaker = new BridgeMaker(new BridgeRandomNumberGenerator());
-        this.canMove = true;
+        this.canMoveNow = true;
         this.bridge = bridge;
         this.attemptManager = attemptManager;
     }
 
     public boolean isSuccess() {
-        return bridge.isSameSizeAndOrder(attemptManager) && canMove;
+        return bridge.isSameSizeAndOrder(attemptManager) && canMoveNow;
     }
 
     public boolean canMove() {
-        return canMove;
+        return canMoveNow;
     }
 
 
@@ -40,15 +40,15 @@ public class BridgeGame {
     public void move(BridgeLocation inputLocation) {
         attemptManager.updateOrder();
         String locationValue = inputLocation.getAnswer();
+        attemptManager.setRecentLocation(locationValue);
         if (!bridge.tryPass(locationValue, attemptManager)) {
-            canMove = false;
+            canMoveNow = false;
         }
     }
 
-
     public boolean retry(GameWhether inputWhether) {
         if (inputWhether.isRetry()) {
-            canMove = true;
+            canMoveNow = true;
             attemptManager.updateTotalAttempts();
             attemptManager.clearOrder();
             bridge.clearBridge();

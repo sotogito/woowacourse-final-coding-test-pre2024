@@ -16,11 +16,6 @@ public enum BridgeState {
         return mark;
     }
 
-    public boolean isPass() {
-        return isPass;
-    }
-
-
     public static BridgeState find(Boolean isPassed) {
         for (BridgeState state : BridgeState.values()) {
             if (state.isPass == isPassed) {

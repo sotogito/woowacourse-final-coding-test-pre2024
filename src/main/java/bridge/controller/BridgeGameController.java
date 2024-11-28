@@ -3,7 +3,7 @@ package bridge.controller;
 import bridge.constants.BridgeLocation;
 import bridge.constants.GameWhether;
 import bridge.domain.AttemptManager;
-import bridge.domain.Bridge;
+import bridge.domain.bridge.Bridge;
 import bridge.service.BridgeGame;
 import bridge.view.InputView;
 import bridge.view.OutputView;
@@ -24,6 +24,11 @@ public class BridgeGameController {
         bridgeGame = new BridgeGame(bridge, attemptManager);
 
         bridgeGame.makeBridge(); //note 다시 시작해도 똑같은 다리 사용
+        loop(attemptManager);
+        outputView.printResult(bridgeGame.getNowBridge(), attemptManager, bridgeGame.getGameResult());
+    }
+
+    private void loop(AttemptManager attemptManager) {
         while (true) {
             bridgeGame.move(inputBridgeLocation()); //note 이동은 이동을 할 수 있던, 없던 동일한 상태 업데이트
             outputView.printMap(bridgeGame.getNowBridge(), attemptManager); //note 이동을 할 수 없어도 다리 출력
@@ -37,10 +42,9 @@ public class BridgeGameController {
                 //note 서비스 내부에서 canMove true로 변경.
             }
         }
-        outputView.printResult(bridgeGame.getNowBridge(), attemptManager, bridgeGame.getGameResult());
     }
 
-    
+
     private GameWhether inputGameWhether() {
         while (true) {
             try {

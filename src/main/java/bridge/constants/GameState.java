@@ -4,8 +4,8 @@ public enum GameState {
     SUCCESS("성공", true),
     FAIL("실패", false);
 
-    private String value;
-    private boolean success;
+    private final String value;
+    private final boolean success;
 
     GameState(String value, boolean success) {
         this.value = value;
@@ -25,7 +25,4 @@ public enum GameState {
         throw new IllegalStateException("게임 결과 출력 오류");
     }
 
-    /**
-     * AttemptManager 시도 횟수가 다리 길이와 같으면 성공
-     */
 }

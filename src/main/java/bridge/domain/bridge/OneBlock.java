@@ -1,4 +1,4 @@
-package bridge.domain;
+package bridge.domain.bridge;
 
 public class OneBlock {
     private final String location;
@@ -13,14 +13,16 @@ public class OneBlock {
         return location;
     }
 
+    public void setIsPass(boolean isPass) {
+        this.isPass = isPass;
+    }
+
     public boolean isPass() {
         return isPass;
     }
 
-    public void updateState(String inputLocation) {
-        if (location.equals(inputLocation)) {
-            isPass = true;
-        }
+    public boolean isSameLocation(String inputLocation) {
+        return this.location.equals(inputLocation);
     }
 
     public void clear() {
