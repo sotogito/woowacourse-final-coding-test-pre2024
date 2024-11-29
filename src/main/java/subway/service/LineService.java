@@ -18,7 +18,7 @@ public class LineService {
     public LineService(SubwayLineRepository subwayLineRepository,
                        LineRepository lineRepository,
                        StationRepository stationRepository) {
-        
+
         this.subwayLineRepository = subwayLineRepository;
         this.lineRepository = lineRepository;
         this.stationRepository = stationRepository;
@@ -26,7 +26,6 @@ public class LineService {
 
     public void addLine(String lineName, String upStationName, String downStationName) {
         Line newLine = new Line(lineName);
-        lineRepository.addLine(new Line(lineName));
 
         Optional<Station> upStation = stationRepository.findStationByName(upStationName);
         if (upStation.isEmpty()) {
@@ -41,6 +40,11 @@ public class LineService {
         }
         Station downFianlStation = downStation.get();
 
+        if (upFianlStation.equals(downFianlStation)) {
+            throw new IllegalArgumentException("상행역과 하행역이 동일합니다.");
+        }
+
+        lineRepository.addLine(new Line(lineName));
         subwayLineRepository.addSubwayLine(
                 new SubwayLine(newLine, new ArrayList<>(List.of(upFianlStation, downFianlStation))));
     }
