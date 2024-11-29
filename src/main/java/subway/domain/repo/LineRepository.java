@@ -30,7 +30,9 @@ public class LineRepository {
     }
 
     public boolean deleteLineByName(String name) {
-        return lines.removeIf(line -> Objects.equals(line.getName(), name));
+        boolean removedFromBase = baselines.removeIf(line -> Objects.equals(line.getName(), name));
+        boolean removedFromLines = lines.removeIf(line -> Objects.equals(line.getName(), name));
+        return removedFromBase || removedFromLines;
     }
 
     public Optional<Line> findLineByName(String name) {
