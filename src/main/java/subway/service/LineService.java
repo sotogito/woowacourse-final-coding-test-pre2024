@@ -4,19 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import subway.domain.Line;
-import subway.domain.LineRepository;
 import subway.domain.Station;
-import subway.domain.StationRepository;
 import subway.domain.SubwayLine;
-import subway.domain.SubwayLineRepository;
+import subway.domain.repo.LineRepository;
+import subway.domain.repo.StationRepository;
+import subway.domain.repo.SubwayLineRepository;
 
 public class LineService {
     private final SubwayLineRepository subwayLineRepository;
     private final LineRepository lineRepository;
     private final StationRepository stationRepository;
 
-    public LineService(SubwayLineRepository subwayLineRepository, LineRepository lineRepository,
+    public LineService(SubwayLineRepository subwayLineRepository,
+                       LineRepository lineRepository,
                        StationRepository stationRepository) {
+        
         this.subwayLineRepository = subwayLineRepository;
         this.lineRepository = lineRepository;
         this.stationRepository = stationRepository;

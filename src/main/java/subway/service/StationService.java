@@ -2,13 +2,13 @@ package subway.service;
 
 import java.util.List;
 import subway.domain.Station;
-import subway.domain.StationRepository;
+import subway.domain.repo.StationRepository;
 
 public class StationService {
     private final StationRepository stationRepository;
 
-    public StationService() {
-        this.stationRepository = new StationRepository();
+    public StationService(StationRepository stationRepository) {
+        this.stationRepository = stationRepository;
     }
 
     public void addStation(String name) {

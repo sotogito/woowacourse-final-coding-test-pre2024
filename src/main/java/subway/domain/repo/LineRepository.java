@@ -1,4 +1,4 @@
-package subway.domain;
+package subway.domain.repo;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import subway.domain.Line;
 
 public class LineRepository {
     private static final List<Line> baselines = new ArrayList<>();

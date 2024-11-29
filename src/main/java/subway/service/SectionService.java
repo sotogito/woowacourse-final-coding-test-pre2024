@@ -4,32 +4,26 @@ import java.util.List;
 import java.util.Optional;
 import java.util.TreeMap;
 import subway.domain.Line;
-import subway.domain.LineRepository;
 import subway.domain.Station;
-import subway.domain.StationRepository;
-import subway.domain.SubwayLineRepository;
+import subway.domain.repo.LineRepository;
+import subway.domain.repo.StationRepository;
+import subway.domain.repo.SubwayLineRepository;
 
 public class SectionService {
-    /**
-     * 순서는 1부터 ㅅ기작
-     */
-
     private final SubwayLineRepository subwayLineRepository;
     private final LineRepository lineRepository;
     private final StationRepository stationRepository;
 
-    public SectionService(LineRepository lineRepository, SubwayLineRepository subwayLineRepository,
+    public SectionService(LineRepository lineRepository,
+                          SubwayLineRepository subwayLineRepository,
                           StationRepository stationRepository) {
+        
         this.lineRepository = lineRepository;
         this.subwayLineRepository = subwayLineRepository;
         this.stationRepository = stationRepository;
     }
 
-    /**
-     * 맴에 있는 노선이여야한다. 맵에 해당되는 삭제 순서야야한다  - 시작은 1로한다. 시작, 끝에는 추가할 수없다.
-     * <p>
-     * 2호선 -> 잠실역 -> 순서
-     */
+
     public void addSection(String lineName, String stationName, int order) {
         Optional<Line> line = lineRepository.findLineByName(lineName);
         if (line.isEmpty()) {

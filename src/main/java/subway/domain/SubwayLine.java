@@ -32,6 +32,17 @@ public class SubwayLine {
         stations.remove(station);
     }
 
+    public boolean isOverSize(int size) {
+        return stations.size() > size;
+    }
+
+    public void updateSubwayMap(Map<Line, List<Station>> subwayMap) {
+        List<Station> sorted = new ArrayList<>(stations);
+        sorted.sort(Station::compareTo); //note 가나다라 정렬
+        //sorted.sort(new StationNameComparator());
+        subwayMap.put(line, sorted);
+    }
+
     private void validateStationOrderInLine(int order) {
         if (order < 1 || order >= stations.size()) {
             throw new IllegalArgumentException("구간 역 등록은 역과 역 사이에만 추가할 수 있습니다.");
@@ -42,17 +53,6 @@ public class SubwayLine {
         if (stations.contains(station)) {
             throw new IllegalArgumentException("이미 노선에 존재하는 역입니다.");
         }
-    }
-
-    public boolean isOverSize(int size) {
-        return stations.size() > size;
-    }
-
-    public void updateSubwayMap(Map<Line, List<Station>> subwayMap) {
-        List<Station> sorted = new ArrayList<>(stations);
-        sorted.sort(Station::compareTo); //note 가나다라 정렬
-        //sorted.sort(new StationNameComparator());
-        subwayMap.put(line, sorted);
     }
 
     @Override

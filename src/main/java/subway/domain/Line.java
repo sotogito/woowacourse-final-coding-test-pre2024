@@ -24,11 +24,12 @@ public class Line implements Comparable<Line> {
         }
     }
 
+
     @Override
     public int compareTo(Line o) {
         return this.name.compareTo(o.name);
     }
-
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -45,4 +46,5 @@ public class Line implements Comparable<Line> {
     public int hashCode() {
         return Objects.hash(name);
     }
+
 }

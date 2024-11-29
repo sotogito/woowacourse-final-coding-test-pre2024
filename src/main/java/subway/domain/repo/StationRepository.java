@@ -1,11 +1,13 @@
-package subway.domain;
+package subway.domain.repo;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
+import subway.domain.Station;
 
 public class StationRepository {
     private static final List<Station> baseStations = new ArrayList<>();
@@ -13,19 +15,19 @@ public class StationRepository {
 
 
     public List<Station> stations() {
-        List<Station> result = new ArrayList<>();
-        result.addAll(baseStations);
-        result.addAll(stations);
-        return Collections.unmodifiableList(result);
+        List<Station> allStations = new ArrayList<>();
+        allStations.addAll(baseStations);
+        allStations.addAll(stations);
+        return Collections.unmodifiableList(allStations);
     }
 
     public void addBaseStation(Station station) {
-        hasDuplicates(baseStations, station);
+        validateDuplicates(baseStations, station);
         baseStations.add(station);
     }
 
     public void addStation(Station station) {
-        hasDuplicates(stations, station);
+        validateDuplicates(stations, station);
         stations.add(station);
     }
 
@@ -38,12 +40,23 @@ public class StationRepository {
         return false;
     }
 
+
     public boolean deleteStation(String name) {
         return stations.removeIf(station -> Objects.equals(station.getName(), name));
     }
 
 
-    public void hasDuplicates(List<Station> stations, Station newStation) {
+    public Optional<Station> findStationByName(String name) {
+        for (Station station : stations()) {
+            if (station.isSameName(name)) {
+                return Optional.of(station);
+            }
+        }
+        return Optional.empty();
+    }
+
+
+    public void validateDuplicates(List<Station> stations, Station newStation) {
         Set<Station> set = new HashSet<>(stations);
         if (!set.add(newStation)) {
             throw new IllegalArgumentException("이미 존재하는 역입니다.");
