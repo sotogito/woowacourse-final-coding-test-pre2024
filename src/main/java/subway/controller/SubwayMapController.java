@@ -28,40 +28,7 @@ public class SubwayMapController {
         LineRepository lineRepository = new LineRepository();
         SubwayLineRepository lineSubwayRepository = new SubwayLineRepository();
 
-        Station gyodae = new Station("교대역");
-        Station gangnam = new Station("깅님역");
-        Station yeoksam = new Station("역삼역");
-        Station nambuTerminal = new Station("남부터미널역");
-        Station yangjae = new Station("양재역");
-        Station yangjaeCitizenSForest = new Station("양재시민의숲역");
-        Station maebong = new Station("매봉역");
-
-        Line line2 = new Line("2호선");
-        Line line3 = new Line("3호선");
-        Line shinbundangLine = new Line("신분당선");
-
-        SubwayLine subwayLine2 = new SubwayLine(line2, new ArrayList<>(List.of(
-                gyodae, gangnam, yeoksam)));
-        SubwayLine subwayLine3 = new SubwayLine(line3, new ArrayList<>(List.of(
-                gyodae, nambuTerminal, yangjae, maebong)));
-        SubwayLine subwayLineShinbundang = new SubwayLine(shinbundangLine, new ArrayList<>(List.of(
-                gangnam, yangjae, yangjaeCitizenSForest)));
-
-        stationRepository.addStation(gyodae);
-        stationRepository.addStation(gangnam);
-        stationRepository.addStation(yeoksam);
-        stationRepository.addStation(nambuTerminal);
-        stationRepository.addStation(yangjae);
-        stationRepository.addStation(yangjaeCitizenSForest);
-        stationRepository.addStation(maebong);
-
-        lineRepository.addLine(line2);
-        lineRepository.addLine(line3);
-        lineRepository.addLine(shinbundangLine);
-
-        lineSubwayRepository.addSubwayLine(subwayLine2);
-        lineSubwayRepository.addSubwayLine(subwayLine3);
-        lineSubwayRepository.addSubwayLine(subwayLineShinbundang);
+        loadSubwayMapData(stationRepository, lineRepository, lineSubwayRepository);
 
         this.lineController = new LineController(
                 new LineService(lineSubwayRepository, lineRepository, stationRepository));
@@ -70,6 +37,7 @@ public class SubwayMapController {
         this.sectionController = new SectionController(
                 new SectionService(lineRepository, lineSubwayRepository, stationRepository));
     }
+
 
     public void run() {
         while (true) {
@@ -100,6 +68,46 @@ public class SubwayMapController {
                 Output.printError(e.getMessage());
             }
         }
+    }
+
+    private void loadSubwayMapData(StationRepository stationRepository,
+                                   LineRepository lineRepository,
+                                   SubwayLineRepository lineSubwayRepository) {
+
+        Station gyodae = new Station("교대역");
+        Station gangnam = new Station("강님역");
+        Station yeoksam = new Station("역삼역");
+        Station nambuTerminal = new Station("남부터미널역");
+        Station yangjae = new Station("양재역");
+        Station yangjaeCitizenSForest = new Station("양재시민의숲역");
+        Station maebong = new Station("매봉역");
+
+        Line line2 = new Line("2호선");
+        Line line3 = new Line("3호선");
+        Line shinbundangLine = new Line("신분당선");
+
+        SubwayLine subwayLine2 = new SubwayLine(line2, new ArrayList<>(List.of(
+                gyodae, gangnam, yeoksam)));
+        SubwayLine subwayLine3 = new SubwayLine(line3, new ArrayList<>(List.of(
+                gyodae, nambuTerminal, yangjae, maebong)));
+        SubwayLine subwayLineShinbundang = new SubwayLine(shinbundangLine, new ArrayList<>(List.of(
+                gangnam, yangjae, yangjaeCitizenSForest)));
+
+        stationRepository.addBaseStation(gyodae);
+        stationRepository.addBaseStation(gangnam);
+        stationRepository.addBaseStation(yeoksam);
+        stationRepository.addBaseStation(nambuTerminal);
+        stationRepository.addBaseStation(yangjae);
+        stationRepository.addBaseStation(yangjaeCitizenSForest);
+        stationRepository.addBaseStation(maebong);
+
+        lineRepository.addBaseline(line2);
+        lineRepository.addBaseline(line3);
+        lineRepository.addBaseline(shinbundangLine);
+
+        lineSubwayRepository.addSubwayLine(subwayLine2);
+        lineSubwayRepository.addSubwayLine(subwayLine3);
+        lineSubwayRepository.addSubwayLine(subwayLineShinbundang);
     }
 
 }
