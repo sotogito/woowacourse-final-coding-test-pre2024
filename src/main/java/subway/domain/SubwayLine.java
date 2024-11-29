@@ -51,6 +51,7 @@ public class SubwayLine {
     public void updateSubwayMap(Map<Line, List<Station>> subwayMap) {
         List<Station> sorted = new ArrayList<>(stations);
         sorted.sort(Station::compareTo); //note 가나다라 정렬
+        //sorted.sort(new StationNameComparator());
         subwayMap.put(line, sorted);
     }
 
