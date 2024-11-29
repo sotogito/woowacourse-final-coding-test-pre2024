@@ -1,6 +1,5 @@
 package subway.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -25,7 +24,7 @@ public class SubwayLine {
     public void addStationToLineAtOrder(Station station, int order) {
         validateStationOrderInLine(order);
         validateDuplicateStationInLine(station);
-        stations.add(order, station);
+        stations.add(order - 1, station);
     }
 
     public void deleteStationInLine(Station station) {
@@ -40,10 +39,7 @@ public class SubwayLine {
     }
 
     public void updateSubwayMap(Map<Line, List<Station>> subwayMap) {
-        List<Station> sorted = new ArrayList<>(stations);
-        sorted.sort(Station::compareTo); //note 가나다라 정렬
-        //sorted.sort(new StationNameComparator());
-        subwayMap.put(line, sorted);
+        subwayMap.put(line, stations);
     }
 
     private void validateStationOrderInLine(int order) {
