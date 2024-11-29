@@ -29,6 +29,9 @@ public class SubwayLine {
     }
 
     public void deleteStationInLine(Station station) {
+        if (!stations.contains(station)) {
+            throw new IllegalArgumentException("해당 노선에 존재하지 않는 역입니다.");
+        }
         stations.remove(station);
     }
 
