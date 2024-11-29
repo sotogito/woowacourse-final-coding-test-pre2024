@@ -15,6 +15,7 @@ public class LineRepository {
         List<Line> allLines = new ArrayList<>();
         allLines.addAll(baselines);
         allLines.addAll(lines);
+        allLines.sort(Line::compareTo);
         return Collections.unmodifiableList(allLines);
     }
 
