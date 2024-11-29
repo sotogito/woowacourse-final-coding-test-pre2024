@@ -76,7 +76,7 @@ public class SubwayMapController {
                                    SubwayLineRepository lineSubwayRepository) {
 
         Station gyodae = new Station("교대역");
-        Station gangnam = new Station("강님역");
+        Station gangnam = new Station("강남역");
         Station yeoksam = new Station("역삼역");
         Station nambuTerminal = new Station("남부터미널역");
         Station yangjae = new Station("양재역");

@@ -5,7 +5,7 @@ import subway.constants.StationFunction;
 import subway.service.StationService;
 import subway.view.Input;
 import subway.view.Output;
-import subway.view.StationFunctionInput;
+import subway.view.StationInput;
 
 public class StationController {
     private final StationService stationService;
@@ -34,7 +34,7 @@ public class StationController {
     private void add() {
         while (true) {
             try {
-                String input = StationFunctionInput.inputStationName();
+                String input = StationInput.inputStationName();
                 if (StationFunction.isBack(input)) { //note 만약 B를 누를경우 역 기능 화면으로 돌아감
                     return;
                 }
@@ -49,7 +49,7 @@ public class StationController {
     private void delete() {
         while (true) {
             try {
-                String input = StationFunctionInput.inputDeleteStationName();
+                String input = StationInput.inputDeleteStationName();
                 if (StationFunction.isBack(input)) {
                     return;
                 }

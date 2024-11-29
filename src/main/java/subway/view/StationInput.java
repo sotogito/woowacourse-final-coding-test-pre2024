@@ -2,7 +2,7 @@ package subway.view;
 
 import java.util.Scanner;
 
-public class StationFunctionInput {
+public class StationInput {
     private final static Scanner scanner = new Scanner(System.in);
 
     public static String inputStationName() {
