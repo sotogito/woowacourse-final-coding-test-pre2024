@@ -15,7 +15,8 @@ public class SectionController {
     }
 
     public boolean isFunctionType(MainFunction inputFunctionType) {
-        return MainFunction.SECTION_MANAGEMENT.equals(inputFunctionType);
+        return MainFunction.SECTION_MANAGEMENT.equals(inputFunctionType)
+                || MainFunction.PRINT_SUBWAY_MAP.equals(inputFunctionType);
     }
 
 }

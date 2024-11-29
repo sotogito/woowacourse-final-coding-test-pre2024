@@ -77,8 +77,7 @@ public class StationController {
     }
 
     public boolean isFunctionType(MainFunction inputFunctionType) {
-        return MainFunction.STATION_MANAGEMENT.equals(inputFunctionType)
-                || MainFunction.PRINT_SUBWAY_MAP.equals(inputFunctionType);
+        return MainFunction.STATION_MANAGEMENT.equals(inputFunctionType);
     }
 
 }
