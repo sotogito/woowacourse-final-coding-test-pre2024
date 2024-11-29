@@ -16,6 +16,7 @@ public class StationRepository {
         List<Station> allStations = new ArrayList<>();
         allStations.addAll(baseStations);
         allStations.addAll(stations);
+        allStations.sort(Station::compareTo);
         return Collections.unmodifiableList(allStations);
     }
 
