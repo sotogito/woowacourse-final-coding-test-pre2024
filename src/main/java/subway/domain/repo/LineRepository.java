@@ -2,11 +2,9 @@ package subway.domain.repo;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Set;
 import subway.domain.Line;
 
 public class LineRepository {
@@ -21,12 +19,12 @@ public class LineRepository {
     }
 
     public void addBaseline(Line line) {
-        hasDuplicates(baselines, line);
+        hasDuplicates(lines(), line);
         baselines.add(line);
     }
 
     public void addLine(Line line) {
-        hasDuplicates(lines, line);
+        hasDuplicates(lines(), line);
         lines.add(line);
     }
 
@@ -44,8 +42,7 @@ public class LineRepository {
     }
 
     public void hasDuplicates(List<Line> lines, Line newStation) {
-        Set<Line> set = new HashSet<>(lines);
-        if (!set.add(newStation)) {
+        if (lines.contains(newStation)) {
             throw new IllegalArgumentException("이미 존재하는 노선입니다.");
         }
     }

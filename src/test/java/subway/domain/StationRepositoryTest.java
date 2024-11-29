@@ -19,7 +19,7 @@ class StationRepositoryTest {
 
     @Test
     void 중복되는_이름_예외_처리() {
-        stationRepository.addStation(new Station("강남역"));
+        stationRepository.addBaseStation(new Station("강남역"));
 
         assertThatThrownBy(() -> stationRepository.addStation(new Station("강남역")))
                 .isInstanceOf(IllegalArgumentException.class);

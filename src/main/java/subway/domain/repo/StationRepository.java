@@ -2,11 +2,9 @@ package subway.domain.repo;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Set;
 import subway.domain.Station;
 
 public class StationRepository {
@@ -22,12 +20,12 @@ public class StationRepository {
     }
 
     public void addBaseStation(Station station) {
-        validateDuplicates(baseStations, station);
+        validateDuplicates(stations(), station);
         baseStations.add(station);
     }
 
     public void addStation(Station station) {
-        validateDuplicates(stations, station);
+        validateDuplicates(stations(), station);
         stations.add(station);
     }
 
@@ -57,8 +55,7 @@ public class StationRepository {
 
 
     public void validateDuplicates(List<Station> stations, Station newStation) {
-        Set<Station> set = new HashSet<>(stations);
-        if (!set.add(newStation)) {
+        if (stations.contains(newStation)) {
             throw new IllegalArgumentException("이미 존재하는 역입니다.");
         }
     }
