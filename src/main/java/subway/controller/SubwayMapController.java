@@ -56,7 +56,7 @@ public class SubwayMapController {
         } else if (lineController.isFunctionType(functionType)) {
             lineController.run();
         } else if (sectionController.isFunctionType(functionType)) {
-            sectionController.run();
+            sectionController.run(functionType);
         }
     }
 

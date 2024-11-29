@@ -80,4 +80,5 @@ public class LineController {
     public boolean isFunctionType(MainFunction inputFunctionType) {
         return MainFunction.LINE_MANAGEMENT.equals(inputFunctionType);
     }
+    
 }

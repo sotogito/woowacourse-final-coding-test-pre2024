@@ -1,8 +1,11 @@
 package subway.view;
 
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import subway.constants.LineFunction;
 import subway.constants.MainFunction;
+import subway.constants.SectionFunction;
 import subway.constants.StationFunction;
 import subway.domain.Line;
 import subway.domain.Station;
@@ -29,6 +32,23 @@ public class Output {
     }
 
 
+    public static void printAllSubwayMap(TreeMap<Line, List<Station>> subwayMap) {
+        System.out.println("## 지하철 노선도");
+
+        for (Map.Entry<Line, List<Station>> entry : subwayMap.entrySet()) {
+            Line line = entry.getKey();
+            List<Station> stations = entry.getValue();
+
+            System.out.printf("[INFO] %s\n", line.getName());
+            System.out.printf("[INFO] %s\n", "---");
+            for (Station station : stations) {
+                System.out.printf("[INFO] %s\n", station.getName());
+            }
+            System.out.println();
+        }
+    }
+
+
     public static void printMainFunctionList() {
         for (MainFunction mainFunction : MainFunction.values()) {
             System.out.print(mainFunction);
@@ -46,6 +66,13 @@ public class Output {
     public static void printLineFunctionList() {
         for (LineFunction lineFunction : LineFunction.values()) {
             System.out.print(lineFunction);
+        }
+        System.out.println();
+    }
+
+    public static void printSectionFunctionList() {
+        for (SectionFunction sectionFunction : SectionFunction.values()) {
+            System.out.print(sectionFunction);
         }
         System.out.println();
     }
