@@ -16,6 +16,7 @@ public class StationController {
 
     public void run() {
         while (true) {
+            Output.printStationFunctionList();
             StationFunction function = inputStationFunction();
             if (function.equals(StationFunction.BACK)) {
                 break;
@@ -34,7 +35,7 @@ public class StationController {
         while (true) {
             try {
                 String input = StationFunctionInput.inputStationName();
-                if (StationFunction.isBack(input)) {
+                if (StationFunction.isBack(input)) { //note 만약 B를 누를경우 역 기능 화면으로 돌아감
                     return;
                 }
                 stationService.addStation(input);
