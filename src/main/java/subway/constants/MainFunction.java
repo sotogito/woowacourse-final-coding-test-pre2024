@@ -31,4 +31,9 @@ public enum MainFunction {
         throw new IllegalArgumentException("존재하지 않는 메인 기능입니다.");
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s. %s\n", value, meaning);
+    }
+
 }

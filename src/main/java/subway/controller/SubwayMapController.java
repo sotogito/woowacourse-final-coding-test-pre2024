@@ -41,6 +41,7 @@ public class SubwayMapController {
 
     public void run() {
         while (true) {
+            Output.printMainFunctionList();
             MainFunction functionType = inputMainFunction();
             if (functionType.equals(MainFunction.QUIT)) {
                 return;
