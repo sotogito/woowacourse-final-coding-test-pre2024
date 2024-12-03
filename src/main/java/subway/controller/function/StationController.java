@@ -21,13 +21,17 @@ public class StationController {
             if (function.equals(StationFunction.BACK)) {
                 break;
             }
-            if (function.equals(StationFunction.ADD_STATION)) {
-                add();
-            } else if (function.equals(StationFunction.DELETE_STATION)) {
-                delete();
-            } else if (function.equals(StationFunction.PRINT_STATION)) {
-                print();
-            }
+            function(function);
+        }
+    }
+
+    private void function(StationFunction function) {
+        if (function.equals(StationFunction.ADD_STATION)) {
+            add();
+        } else if (function.equals(StationFunction.DELETE_STATION)) {
+            delete();
+        } else if (function.equals(StationFunction.PRINT_STATION)) {
+            print();
         }
     }
 

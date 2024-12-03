@@ -21,14 +21,17 @@ public class LineController {
             if (function.equals(LineFunction.BACK)) {
                 break;
             }
-            if (function.equals(LineFunction.ADD_LINE)) {
-                add();
-            } else if (function.equals(LineFunction.DELETE_LINE)) {
-                delete();
-            } else if (function.equals(LineFunction.PRINT_LINE)) {
-                print();
-            }
+            function(function);
+        }
+    }
 
+    private void function(LineFunction function) {
+        if (function.equals(LineFunction.ADD_LINE)) {
+            add();
+        } else if (function.equals(LineFunction.DELETE_LINE)) {
+            delete();
+        } else if (function.equals(LineFunction.PRINT_LINE)) {
+            print();
         }
     }
 
@@ -80,5 +83,5 @@ public class LineController {
     public boolean isFunctionType(MainFunction inputFunctionType) {
         return MainFunction.LINE_MANAGEMENT.equals(inputFunctionType);
     }
-    
+
 }

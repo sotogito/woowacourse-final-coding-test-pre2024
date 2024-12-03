@@ -15,8 +15,7 @@ public class SectionController {
     }
 
     public void run(MainFunction mainFunction) {
-        if (mainFunction.equals(MainFunction.PRINT_SUBWAY_MAP)) {
-            printAllSubwayMap();
+        if (printAllSubwayMap(mainFunction)) {
             return;
         }
         while (true) {
@@ -25,14 +24,17 @@ public class SectionController {
             if (function.equals(SectionFunction.BACK)) {
                 break;
             }
-            if (function.equals(SectionFunction.ADD_SECTION)) {
-                add();
-            } else if (function.equals(SectionFunction.DELETE_SECTION)) {
-                delete();
-            }
+            function(function);
         }
+    }
 
 
+    private void function(SectionFunction function) {
+        if (function.equals(SectionFunction.ADD_SECTION)) {
+            add();
+        } else if (function.equals(SectionFunction.DELETE_SECTION)) {
+            delete();
+        }
     }
 
     public void add() {
@@ -64,6 +66,13 @@ public class SectionController {
         }
     }
 
+    private boolean printAllSubwayMap(MainFunction mainFunction) {
+        if (mainFunction.equals(MainFunction.PRINT_SUBWAY_MAP)) {
+            printAllSubwayMap();
+            return true;
+        }
+        return false;
+    }
 
     public void printAllSubwayMap() {
         Output.printAllSubwayMap(sectionService.getSubwayMap());
