@@ -29,7 +29,7 @@ public enum Day {
                 return day;
             }
         }
-        return null;
+        throw new IllegalArgumentException("요일 반환 오류");
     }
 
 }
