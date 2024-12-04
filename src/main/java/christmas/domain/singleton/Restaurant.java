@@ -1,8 +1,8 @@
 package christmas.domain.singleton;
 
 import christmas.constant.Category;
-import christmas.domain.MenuItem;
 import christmas.domain.dto.CategoryMenuDto;
+import christmas.domain.restaurant.MenuItem;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
@@ -19,6 +19,16 @@ public enum Restaurant {
                 if (menuItem.isSame(menuName)) {
                     return new CategoryMenuDto(category, menuItem);
                 }
+            }
+        }
+        throw new IllegalArgumentException("존재하지 않는 메뉴입니다.");
+    }
+
+    public MenuItem findMenuByCategoryAndMenuName(Category category, String menuName) {
+        List<MenuItem> menuItems = menus.get(category);
+        for (MenuItem menuItem : menuItems) {
+            if (menuItem.isSame(menuName)) {
+                return menuItem;
             }
         }
         throw new IllegalArgumentException("존재하지 않는 메뉴입니다.");
