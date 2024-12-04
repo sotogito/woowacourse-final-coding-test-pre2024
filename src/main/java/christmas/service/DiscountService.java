@@ -2,6 +2,7 @@ package christmas.service;
 
 import christmas.domain.EventPlan;
 import christmas.domain.EventPlanner;
+import christmas.domain.dto.EventApplyDto;
 import christmas.domain.event.Event;
 import christmas.domain.user.Cart;
 import christmas.domain.user.Schedule;
@@ -20,25 +21,26 @@ public class DiscountService {
 
     public EventPlan applyEvent(Schedule schedule, Cart cart, Wallet wallet) {
         EventPlan eventPlan = new EventPlan();
+        EventApplyDto dto = new EventApplyDto(schedule, cart, wallet, eventPlan);
 
         if (!wallet.canEvent()) {
             return eventPlan;
         }
 
         for (Event event : eventPlanner.getApplicableDateEvents(schedule)) {
-            event.apply(schedule, cart, wallet, eventPlan);
+            event.apply(dto);
         }
 
         Optional<Event> giftEvent = eventPlanner.getGiftEvent(schedule);
         if (giftEvent.isPresent()) {
             Event gift = giftEvent.get();
-            gift.apply(schedule, cart, wallet, eventPlan);
+            gift.apply(dto);
         }
 
         Optional<Event> badgeGiftEvent = eventPlanner.getBadgeGiftEvent(schedule);
         if (badgeGiftEvent.isPresent()) {
             Event badge = badgeGiftEvent.get();
-            badge.apply(schedule, cart, wallet, eventPlan);
+            badge.apply(dto);
         }
 
         return eventPlan;

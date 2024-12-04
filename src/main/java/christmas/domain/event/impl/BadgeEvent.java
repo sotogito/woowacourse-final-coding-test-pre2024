@@ -3,10 +3,9 @@ package christmas.domain.event.impl;
 import christmas.constant.DecemberEvent;
 import christmas.domain.Badge;
 import christmas.domain.EventPlan;
+import christmas.domain.dto.EventApplyDto;
 import christmas.domain.event.Gift;
-import christmas.domain.user.Cart;
 import christmas.domain.user.Schedule;
-import christmas.domain.user.Wallet;
 
 public class BadgeEvent implements Gift {
 
@@ -16,7 +15,9 @@ public class BadgeEvent implements Gift {
     }
 
     @Override
-    public void apply(Schedule schedule, Cart cart, Wallet wallet, EventPlan eventPlan) {
+    public void apply(EventApplyDto dto) {
+        EventPlan eventPlan = dto.eventPlan();
+
         Badge badge = Badge.findByDiscountAmount(eventPlan.getTotalDiscountAmountWithGift());
         eventPlan.setBadge(badge);
     }

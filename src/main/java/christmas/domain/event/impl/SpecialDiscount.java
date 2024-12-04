@@ -2,10 +2,9 @@ package christmas.domain.event.impl;
 
 import christmas.constant.DecemberEvent;
 import christmas.domain.EventPlan;
+import christmas.domain.dto.EventApplyDto;
 import christmas.domain.event.Discount;
-import christmas.domain.user.Cart;
 import christmas.domain.user.Schedule;
-import christmas.domain.user.Wallet;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -22,7 +21,9 @@ public class SpecialDiscount implements Discount {
     }
 
     @Override
-    public void apply(Schedule schedule, Cart cart, Wallet wallet, EventPlan eventPlan) {
+    public void apply(EventApplyDto dto) {
+        EventPlan eventPlan = dto.eventPlan();
+
         eventPlan.addAppliedEvent(this, BASE_DISCOUNT_PRICE);
     }
 

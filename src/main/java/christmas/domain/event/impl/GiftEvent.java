@@ -3,10 +3,10 @@ package christmas.domain.event.impl;
 import christmas.constant.Category;
 import christmas.constant.DecemberEvent;
 import christmas.domain.EventPlan;
+import christmas.domain.dto.EventApplyDto;
 import christmas.domain.event.Gift;
 import christmas.domain.restaurant.MenuItem;
 import christmas.domain.singleton.Restaurant;
-import christmas.domain.user.Cart;
 import christmas.domain.user.Schedule;
 import christmas.domain.user.Wallet;
 import java.time.LocalDate;
@@ -26,7 +26,10 @@ public class GiftEvent implements Gift {
     }
 
     @Override
-    public void apply(Schedule schedule, Cart cart, Wallet wallet, EventPlan eventPlan) {
+    public void apply(EventApplyDto dto) {
+        Wallet wallet = dto.wallet();
+        EventPlan eventPlan = dto.eventPlan();
+
         if (wallet.isOverAmount(APPLICABLE_AMOUNT)) {
             MenuItem menu = Restaurant.RESTAURANT.findMenuByCategoryAndMenuName(GIFT_CATEGORY_TYPE, GIFT_MENU_NAME);
             eventPlan.addGiftMenu(menu, GIFT_QUANTITY);

@@ -4,10 +4,10 @@ import christmas.constant.Category;
 import christmas.constant.DecemberEvent;
 import christmas.domain.EventPlan;
 import christmas.domain.dto.CategoryQuantityDto;
+import christmas.domain.dto.EventApplyDto;
 import christmas.domain.event.Discount;
 import christmas.domain.user.Cart;
 import christmas.domain.user.Schedule;
-import christmas.domain.user.Wallet;
 import java.time.LocalDate;
 
 public class WeekendDiscount implements Discount {
@@ -24,9 +24,12 @@ public class WeekendDiscount implements Discount {
     }
 
     @Override
-    public void apply(Schedule schedule, Cart cart, Wallet wallet, EventPlan eventPlan) {
-        CategoryQuantityDto dto = cart.findQuantityByCategory(APPLY_CATEGORY);
-        int totalDiscount = BASE_DISCOUNT_PRICE * dto.quantity();
+    public void apply(EventApplyDto dto) {
+        Cart cart = dto.cart();
+        EventPlan eventPlan = dto.eventPlan();
+
+        CategoryQuantityDto categoryQuantityDto = cart.findQuantityByCategory(APPLY_CATEGORY);
+        int totalDiscount = BASE_DISCOUNT_PRICE * categoryQuantityDto.quantity();
         eventPlan.addAppliedEvent(this, totalDiscount);
     }
 
