@@ -14,7 +14,8 @@ public enum Badge {
         this.amount = amount;
     }
 
-    public static Badge findByPurchaseAmount(int amount) {
+    public static Badge findByDiscountAmount(int amount) {
+
         if (amount >= SANTA.amount) {
             return SANTA;
         } else if (amount >= TREE.amount) {

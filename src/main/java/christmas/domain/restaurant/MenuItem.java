@@ -1,4 +1,4 @@
-package christmas.domain;
+package christmas.domain.restaurant;
 
 public class MenuItem {
     private final String name;
@@ -15,6 +15,14 @@ public class MenuItem {
 
     public int calculateAmountByQuantity(int quantity) {
         return price * quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
     @Override
