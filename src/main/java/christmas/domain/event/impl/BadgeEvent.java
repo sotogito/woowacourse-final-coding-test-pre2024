@@ -17,7 +17,7 @@ public class BadgeEvent implements Gift {
 
     @Override
     public void apply(Schedule schedule, Cart cart, Wallet wallet, EventPlan eventPlan) {
-        Badge badge = wallet.getBadgeType();
+        Badge badge = Badge.findByDiscountAmount(eventPlan.getTotalDiscountAmountWithGift());
         eventPlan.setBadge(badge);
     }
 
