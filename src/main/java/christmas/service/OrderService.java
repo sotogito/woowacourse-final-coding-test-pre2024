@@ -32,15 +32,21 @@ public class OrderService {
             MenuItem menuItem = dto.menuItem();
             int quantity = orderItem.quantity();
 
+            List<Order> orders = new ArrayList<>();
+
             if (result.containsKey(category)) {
-                List<Order> orders = result.get(category);
-                //이미 있는 order 누적 수량 추가
-                orders.add(new Order(menuItem, quantity));
-                continue;
+                orders = result.get(category);
             }
 
-            List<Order> orders = new ArrayList<>();
-            orders.add(new Order(menuItem, quantity));
+            Order order = new Order(menuItem, quantity);
+
+            if (orders.contains(order)) {
+                Order oldOrder = orders.get(orders.indexOf(order));
+                oldOrder.increaseQuantity(quantity);
+                continue;
+            }
+            
+            orders.add(order);
             result.put(category, orders);
         }
         return new Cart(result);
