@@ -1,7 +1,7 @@
 package christmas.domain.user;
 
 import christmas.constant.Category;
-import christmas.domain.Order;
+import christmas.domain.dto.CategoryQuantityDto;
 import java.util.EnumMap;
 import java.util.List;
 
@@ -36,22 +36,35 @@ public class Cart {
             }
         }
         if (totalQuantity < 0 || totalQuantity > 20) {
-            throw new IllegalArgumentException("주문 수량은 총 0~20까지 가능합니다.");
+            throw new IllegalArgumentException("주문 수량은 총 1~20까지 가능합니다.");
         }
     }
 
-    public EnumMap<Category, Integer> findQuantityByCategory(Category category) {
-        EnumMap<Category, Integer> result = new EnumMap<>(Category.class);
+    public CategoryQuantityDto findQuantityByCategory(Category category) {
         int totalQuantity = 0;
 
-        List<Order> orders = cart.get(category);
-        if (orders != null) {
-            return result;
+        if (!cart.containsKey(category)) {
+            return new CategoryQuantityDto(category, totalQuantity);
         }
+
+        List<Order> orders = cart.get(category);
         for (Order order : orders) {
             totalQuantity += order.getQuantity();
         }
-        result.put(category, totalQuantity);
-        return result;
+        return new CategoryQuantityDto(category, totalQuantity);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder printout = new StringBuilder();
+
+        for (Category category : cart.keySet()) {
+            List<Order> orders = cart.get(category);
+            for (Order order : orders) {
+                printout.append(order).append("\n");
+            }
+        }
+        return printout.toString();
+    }
+
 }
