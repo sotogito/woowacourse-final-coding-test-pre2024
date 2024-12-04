@@ -14,9 +14,6 @@ public class Cart {
         cart = order;
     }
 
-    /**
-     * 총 수량 유효검사 카테고리에따른 수량과 가격 반환
-     */
 
     public int calculateTotalPurchaseAmount() {
         int totalAmount = 0;
