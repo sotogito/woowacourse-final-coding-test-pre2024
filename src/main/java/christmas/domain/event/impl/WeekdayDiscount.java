@@ -33,4 +33,5 @@ public class WeekdayDiscount implements Discount {
     public DecemberEvent getEventType() {
         return DecemberEvent.WEEKDAY_DISCOUNT;
     }
+
 }

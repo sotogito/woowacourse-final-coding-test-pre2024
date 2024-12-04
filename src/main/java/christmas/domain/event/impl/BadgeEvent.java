@@ -23,6 +23,7 @@ public class BadgeEvent implements Gift {
 
     @Override
     public DecemberEvent getEventType() {
-        return null;
+        return DecemberEvent.BADGE_EVENT;
     }
+
 }

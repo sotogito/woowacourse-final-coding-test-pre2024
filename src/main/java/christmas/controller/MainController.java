@@ -23,12 +23,11 @@ public class MainController {
         Schedule schedule = createSchedule();
         Cart cart = createCart();
         Wallet wallet = orderService.calculatePurchaseAmount(cart);
-        
+
         EventPlan eventPlanResult = discountService.applyEvent(schedule, cart, wallet);
         discountService.calculateTotalDiscountAmount(eventPlanResult, wallet);
 
         Output.printEventPlan(cart, wallet, eventPlanResult);
-
     }
 
     private Schedule createSchedule() {
@@ -51,6 +50,5 @@ public class MainController {
             }
         }
     }
-
 
 }

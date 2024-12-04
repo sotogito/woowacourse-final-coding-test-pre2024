@@ -27,7 +27,6 @@ public class OrderMenuParser {
 
             result.add(new OrderItemDto(menu, quantity));
         }
-
         return result;
     }
 

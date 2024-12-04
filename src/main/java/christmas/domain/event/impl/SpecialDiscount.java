@@ -16,7 +16,6 @@ public class SpecialDiscount implements Discount {
 
     private final static int BASE_DISCOUNT_PRICE = 1000;
 
-
     @Override
     public boolean isValidDate(Schedule schedule) {
         return schedule.isValidDate(start, end) && schedule.isValidSpecialDate(SPECIAL_DAYS);
