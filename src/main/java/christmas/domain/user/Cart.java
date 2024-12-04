@@ -10,6 +10,7 @@ public class Cart {
 
     public Cart(EnumMap<Category, List<Order>> order) {
         validateTotalQuantity(order);
+        validateCategory(order);
         cart = order;
     }
 
@@ -21,10 +22,24 @@ public class Cart {
         int totalAmount = 0;
         for (List<Order> orders : cart.values()) {
             for (Order order : orders) {
-                totalAmount += order.getQuantity();
+                totalAmount += order.getAmount();
             }
         }
         return totalAmount;
+    }
+
+    public CategoryQuantityDto findQuantityByCategory(Category category) {
+        int totalQuantity = 0;
+
+        if (!cart.containsKey(category)) {
+            return new CategoryQuantityDto(category, totalQuantity);
+        }
+
+        List<Order> orders = cart.get(category);
+        for (Order order : orders) {
+            totalQuantity += order.getQuantity();
+        }
+        return new CategoryQuantityDto(category, totalQuantity);
     }
 
     private void validateTotalQuantity(EnumMap<Category, List<Order>> order) {
@@ -40,18 +55,12 @@ public class Cart {
         }
     }
 
-    public CategoryQuantityDto findQuantityByCategory(Category category) {
-        int totalQuantity = 0;
-
-        if (!cart.containsKey(category)) {
-            return new CategoryQuantityDto(category, totalQuantity);
+    private void validateCategory(EnumMap<Category, List<Order>> order) {
+        if (order.size() == 1) {
+            if (order.containsKey(Category.DRINK)) {
+                throw new IllegalArgumentException("음료만 주문할 수 없습니다");
+            }
         }
-
-        List<Order> orders = cart.get(category);
-        for (Order order : orders) {
-            totalQuantity += order.getQuantity();
-        }
-        return new CategoryQuantityDto(category, totalQuantity);
     }
 
     @Override
