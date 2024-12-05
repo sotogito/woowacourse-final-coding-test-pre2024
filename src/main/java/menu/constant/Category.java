@@ -28,10 +28,19 @@ public enum Category {
     }
 
     //note 1
-    public static String findByNumber(int number) {
+    public static String findByNumber2(int number) {
         for (Category category : Category.values()) {
             if (category.value == number) {
                 return category.name;
+            }
+        }
+        throw new IllegalArgumentException("존재하지 않는 카테고리");
+    }
+
+    public static Category findByNumber(int number) {
+        for (Category category : Category.values()) {
+            if (category.value == number) {
+                return category;
             }
         }
         throw new IllegalArgumentException("존재하지 않는 카테고리");
