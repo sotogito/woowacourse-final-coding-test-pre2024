@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CoachParser {
 
-    public List<String> parse(String inputName) {
+    public static List<String> parse(String inputName) {
         List<String> result = new ArrayList<>();
 
         inputName = inputName.trim();

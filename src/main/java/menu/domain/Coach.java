@@ -18,6 +18,10 @@ public class Coach {
         OneWeekMenuSchedule = new EnumMap<>(Week.class);
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void addHateMenus(List<String> hateMenu) {
         this.hateMenu.addAll(hateMenu);
     }

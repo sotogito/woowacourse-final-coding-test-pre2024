@@ -41,3 +41,16 @@
 - 한 주에 같은 카테고리는 최대 2회만 가능하다.
 - 코치들에게 중복되지 않는 메뉴를 추천한다.
 - 코치의 생성된 데이터는 누가 가지고 잇지
+
+- 스캐줄을 관리할때 EnumMap을 사용할거면 key가 반드시 Week(E) 여야한다. Category로 할 시 Enum에 정의된 순서대로저장된다.
+
+- String category = categories.get(Randoms.pickNumberInRange(1, 5));
+- String menu = Randoms.shuffle(menus).get(0);
+- 메뉴는 List<String>의 형태로 준비한다.
+
+---
+
+- 카테고리 추천 과정
+    - 카테고리를 Enum에서 List<String> 형태로 준비한다.
+    - 7번 for문을 돌려 WeekMenuCategoryResult에 저장한다.
+    - 각 Coachs for문을 돌려 코치들의 메뉴를 추천하여 Coach에 저장한다.

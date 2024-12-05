@@ -1,7 +1,7 @@
 ##### 1. Service
 
-- 코치 못 먹는 음식 저장 + 코치 생성
-- 메뉴 추천
+- CoachHateMenuService 코치 못 먹는 음식 저장 + 코치 생성
+- MenuScheduleService 메뉴 추천
 
 ##### 2. Enum
 
@@ -20,9 +20,6 @@
 - Coachs - List<Coach>
 
 ##### 4. 필요(생성) 객체
-
-- MenuItem
-    - equal 정의 필요
 
 ---
 

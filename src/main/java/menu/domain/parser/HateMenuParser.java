@@ -5,7 +5,7 @@ import java.util.List;
 
 public class HateMenuParser {
 
-    public List<String> parse(String inputName) {
+    public static List<String> parse(String inputName) {
         List<String> result = new ArrayList<>();
 
         inputName = inputName.trim();
@@ -20,5 +20,5 @@ public class HateMenuParser {
         }
         return result;
     }
-    
+
 }
