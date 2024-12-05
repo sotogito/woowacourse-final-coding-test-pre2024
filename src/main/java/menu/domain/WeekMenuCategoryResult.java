@@ -26,7 +26,8 @@ public class WeekMenuCategoryResult {
                 count++;
             }
         }
-        return count <= DUPLICATION_MIN_COUNT;
+        return count < DUPLICATION_MIN_COUNT;
+        //note 넣을 수 있냐이기 때문에, 1개일때만 가능함. <=로 할경우 2개일때 추가 가능이라 결국 3개 담김
     }
 
     //note 추가
