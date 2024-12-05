@@ -20,7 +20,7 @@ public class DiscountService {
     }
 
     public EventPlan applyEvent(Schedule schedule, Cart cart, Wallet wallet) {
-        EventPlan eventPlan = new EventPlan();
+        EventPlan eventPlan = new EventPlan(schedule, cart, wallet);
         EventApplyDto dto = new EventApplyDto(schedule, cart, wallet, eventPlan);
 
         if (!wallet.canEvent()) {

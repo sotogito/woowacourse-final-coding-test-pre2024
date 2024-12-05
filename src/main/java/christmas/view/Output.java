@@ -14,7 +14,10 @@ public class Output {
         System.out.printf("[ERROR] %s\n", error);
     }
 
-    public static void printEventPlan(Cart cart, Wallet wallet, EventPlan eventPlan) {
+    public static void printEventPlan(EventPlan eventPlan) {
+        Cart cart = eventPlan.getCart();
+        Wallet wallet = eventPlan.getWallet();
+        
         System.out.println("12월 26일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
         System.out.println();
 

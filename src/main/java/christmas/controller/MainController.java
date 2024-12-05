@@ -27,7 +27,7 @@ public class MainController {
         EventPlan eventPlanResult = discountService.applyEvent(schedule, cart, wallet);
         discountService.calculateTotalDiscountAmount(eventPlanResult, wallet);
 
-        Output.printEventPlan(cart, wallet, eventPlanResult);
+        Output.printEventPlan(eventPlanResult);
     }
 
     private Schedule createSchedule() {
