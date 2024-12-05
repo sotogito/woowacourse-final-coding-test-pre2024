@@ -66,4 +66,15 @@ public class Coach {
         return Objects.hash(name);
     }
 
+    @Override
+    public String toString() {
+        List<String> menuResult = new ArrayList<>();
+        for (EnumMap.Entry<Week, String> entry : OneWeekMenuSchedule.entrySet()) {
+            menuResult.add(entry.getValue());
+        }
+
+        return String.format(
+                "[ %s | %s ]\n", name, String.join(" | ", menuResult));
+    }
+
 }

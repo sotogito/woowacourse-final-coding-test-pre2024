@@ -1,6 +1,8 @@
 package menu.domain;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 import menu.constant.Category;
 import menu.constant.Week;
 
@@ -30,6 +32,29 @@ public class WeekMenuCategoryResult {
     //note 추가
     public void addCategoryByWeek(Week week, Category category) {
         categories.put(week, category);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder printout = new StringBuilder();
+        List<String> oneWeek = new ArrayList<>();
+        List<String> categoryWeek = new ArrayList<>();
+
+        for (EnumMap.Entry<Week, Category> entry : categories.entrySet()) {
+            Week week = entry.getKey();
+            Category category = entry.getValue();
+
+            oneWeek.add(week.getName());
+            categoryWeek.add(category.getName());
+        }
+
+        printout.append(String.format(
+                "[ 구분 | %s ]\n", String.join(" | ", oneWeek)));
+
+        printout.append(String.format(
+                "[ 카테고리 | %s ]\n", String.join(" | ", categoryWeek)));
+
+        return printout.toString();
     }
 
 }

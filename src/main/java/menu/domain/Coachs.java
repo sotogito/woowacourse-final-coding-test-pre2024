@@ -33,4 +33,14 @@ public class Coachs {
         }
     }
 
+    @Override
+    public String toString() {
+        StringBuilder printout = new StringBuilder();
+
+        for (Coach coach : coachs) {
+            printout.append(coach);
+        }
+        return printout.toString();
+    }
+
 }

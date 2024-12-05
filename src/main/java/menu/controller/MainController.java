@@ -2,6 +2,7 @@ package menu.controller;
 
 import menu.domain.Coach;
 import menu.domain.Coachs;
+import menu.domain.WeekMenuCategoryResult;
 import menu.domain.parser.CoachParser;
 import menu.domain.parser.HateMenuParser;
 import menu.service.CoachHateMenuService;
@@ -14,12 +15,19 @@ public class MainController {
     private MenuScheduleService menuScheduleService;
 
     public void run() {
+        System.out.println("점심 메뉴 추천을 시작합니다.");
         coachHateMenuService = new CoachHateMenuService();
         menuScheduleService = new MenuScheduleService();
         Coachs coachs = createCoachs();
         updateHateMenu(coachs);
 
-        menuScheduleService.schedule(coachs);
+        WeekMenuCategoryResult schedule = menuScheduleService.schedule(coachs);
+
+        //note 출력에 필요  Coachs, WeekMenuCategoryResult
+        /**
+         * 카테고리가 중복됨
+         */
+        Output.printOneWeekMenuSchedule(schedule, coachs);
     }
 
     private void updateHateMenu(Coachs coachs) {
