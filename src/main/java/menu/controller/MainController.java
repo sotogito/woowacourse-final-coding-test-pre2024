@@ -2,7 +2,7 @@ package menu.controller;
 
 import menu.domain.Coach;
 import menu.domain.Coachs;
-import menu.domain.WeekMenuCategoryResult;
+import menu.domain.WeekMenuScheduler;
 import menu.domain.parser.CoachParser;
 import menu.domain.parser.HateMenuParser;
 import menu.service.CoachHateMenuService;
@@ -21,7 +21,7 @@ public class MainController {
         Coachs coachs = createCoachs();
         updateHateMenu(coachs);
 
-        WeekMenuCategoryResult schedule = menuScheduleService.schedule(coachs);
+        WeekMenuScheduler schedule = menuScheduleService.schedule(coachs);
 
         Output.printOneWeekMenuSchedule(schedule, coachs);
     }

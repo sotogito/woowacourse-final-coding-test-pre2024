@@ -1,7 +1,7 @@
 package menu.view;
 
 import menu.domain.Coachs;
-import menu.domain.WeekMenuCategoryResult;
+import menu.domain.WeekMenuScheduler;
 
 public class Output {
     public static void printError(String error) {
@@ -15,7 +15,7 @@ public class Output {
      * 추천을 완료했습니다.
      */
 
-    public static void printOneWeekMenuSchedule(WeekMenuCategoryResult weekMenuCategoryResult, Coachs coachs) {
+    public static void printOneWeekMenuSchedule(WeekMenuScheduler weekMenuCategoryResult, Coachs coachs) {
         System.out.println("메뉴 추천 결과입니다.");
 
         System.out.print(weekMenuCategoryResult);

@@ -1,12 +1,8 @@
 package menu.service;
 
-import camp.nextstep.edu.missionutils.Randoms;
-import java.util.List;
-import menu.constant.Category;
 import menu.constant.Week;
-import menu.domain.Coach;
 import menu.domain.Coachs;
-import menu.domain.WeekMenuCategoryResult;
+import menu.domain.WeekMenuScheduler;
 import menu.domain.singleton.Restaurant;
 
 /**
@@ -14,6 +10,7 @@ import menu.domain.singleton.Restaurant;
  */
 public class MenuScheduleService {
     private final Restaurant restaurant;
+    //private final Scheduler scheduler;
 
     public MenuScheduleService() {
         restaurant = Restaurant.RESTAURANT;
@@ -28,8 +25,15 @@ public class MenuScheduleService {
      * 코치 for문 매뉴추천 + 목먹는 음식 제외, 중복된 메뉴 제외 String menu =Randoms.shuffle(menus).get(0);
      */
 
+    public WeekMenuScheduler schedule(Coachs coachs) {
+        WeekMenuScheduler weekMenuCategoryResult = new WeekMenuScheduler(coachs);
+        weekMenuCategoryResult.schedule(Week.getAllWeek(), restaurant);
+        return weekMenuCategoryResult;
+    }
+
+    /*
     public WeekMenuCategoryResult schedule(Coachs coachs) {
-        WeekMenuCategoryResult weekMenuCategoryResult = new WeekMenuCategoryResult();
+        WeekMenuCategoryResult weekMenuCategoryResult = new WeekMenuCategoryResult(coachs);
         List<Week> weeks = Week.getAllWeek();
 
         for (Week week : weeks) {
@@ -61,5 +65,7 @@ public class MenuScheduleService {
             }
         }
     }
-    
+
+     */
+
 }
