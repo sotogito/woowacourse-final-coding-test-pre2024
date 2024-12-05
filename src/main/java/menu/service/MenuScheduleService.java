@@ -16,14 +16,6 @@ public class MenuScheduleService {
         restaurant = Restaurant.RESTAURANT;
     }
 
-    /**
-     * 카테고리 결과 생앙 아예 다 만든다음에 Result에 저장?
-     * <p>
-     * List<Week>for문 돌리면서 카테고리 랜덤 + 유ㅛ검사 String category =categories.get(Randoms.pickNumberInRange(1, 5));
-     * <p>
-     * <p>
-     * 코치 for문 매뉴추천 + 목먹는 음식 제외, 중복된 메뉴 제외 String menu =Randoms.shuffle(menus).get(0);
-     */
 
     public WeekMenuScheduler schedule(Coachs coachs) {
         WeekMenuScheduler weekMenuCategoryResult = new WeekMenuScheduler(coachs);
