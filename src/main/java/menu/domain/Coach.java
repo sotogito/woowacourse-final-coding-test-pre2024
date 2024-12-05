@@ -9,7 +9,7 @@ import menu.constant.Week;
 public class Coach {
     private final String name;
     private final List<String> hateMenu;
-    private final EnumMap<Week, String> OneWeekMenuSchedule;
+    private final EnumMap<Week, String> OneWeekMenuSchedule; //note 얘는 왜 코치에서 저장해도되지
 
     public Coach(String name) {
         validateName(name);
