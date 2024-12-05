@@ -5,6 +5,7 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Objects;
 import menu.constant.Week;
+import menu.domain.singleton.Restaurant;
 
 public class Coach {
     private final String name;
@@ -22,8 +23,9 @@ public class Coach {
         return name;
     }
 
-    public void addHateMenus(List<String> hateMenu) {
-        this.hateMenu.addAll(hateMenu);
+    public void addHateMenu(String hateMenuName) {
+        Restaurant.RESTAURANT.validateMenu(hateMenuName);
+        this.hateMenu.add(hateMenuName);
     }
 
     public boolean isHateMenus(String menu) {

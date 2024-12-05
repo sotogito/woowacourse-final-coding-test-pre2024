@@ -37,9 +37,8 @@ public class CoachHateMenuService {
             return;
         }
         for (String menuName : hateMenus) {
-            restaurant.validateMenu(menuName);
+            coach.addHateMenu(menuName);
         }
-        coach.addHateMenus(hateMenus);
     }
 
 }
