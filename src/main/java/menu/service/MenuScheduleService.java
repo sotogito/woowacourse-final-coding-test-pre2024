@@ -16,6 +16,12 @@ public class MenuScheduleService {
         restaurant = Restaurant.RESTAURANT;
     }
 
+    /**
+     * 결국에 얘가 객체지향의ㅏ사실과오해 책에서 바리스타와 같은 역할을 하는거다.
+     *
+     * @param coachs
+     * @return
+     */
 
     public WeekMenuScheduler schedule(Coachs coachs) {
         WeekMenuScheduler weekMenuCategoryResult = new WeekMenuScheduler(coachs);

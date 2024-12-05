@@ -31,7 +31,7 @@ public class WeekMenuScheduler {
 
     private void randomCoachMenu(Week week, Coach coach, List<String> menusByCategory) {
         while (true) {
-            String menu = Randoms.shuffle(menusByCategory).get(0);
+            String menu = Randoms.shuffle(menusByCategory).get(0); //note 서비스에서 한다면 RandomMaker
             if (!coach.isHateMenus(menu) && !coach.isContainSameMenu(menu)) {
                 coach.addOneWeekMenuSchedule(week, menu);
                 return;
@@ -41,7 +41,7 @@ public class WeekMenuScheduler {
 
     private Category randomCategory() {
         while (true) {
-            Category category = Category.findByNumber(Randoms.pickNumberInRange(1, 5));
+            Category category = Category.findByNumber(Randoms.pickNumberInRange(1, 5));//note 서비스에서 한다면 RandomMaker
             if (canAddCategory(category)) {
                 return category;
             }
