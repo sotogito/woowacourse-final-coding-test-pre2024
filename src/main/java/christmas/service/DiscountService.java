@@ -19,6 +19,9 @@ public class DiscountService {
         this.eventPlanner = new EventPlanner();
     }
 
+    /**
+     * EventPlan 내부에서 하기에는 책임 이 너무 크고 로직이 무겁다.
+     */
     public EventPlan applyEvent(Schedule schedule, Cart cart, Wallet wallet) {
         EventPlan eventPlan = new EventPlan(schedule, cart, wallet);
         EventApplyDto dto = new EventApplyDto(schedule, cart, wallet, eventPlan);

@@ -8,6 +8,7 @@ import java.util.List;
 public class Cart {
     private final EnumMap<Category, List<Order>> cart;
 
+    //note 생성이 될때 한번에 유효검사가 필요함
     public Cart(EnumMap<Category, List<Order>> order) {
         validateTotalQuantity(order);
         validateCategory(order);

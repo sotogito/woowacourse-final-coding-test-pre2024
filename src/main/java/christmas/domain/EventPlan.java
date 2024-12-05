@@ -30,13 +30,6 @@ public class EventPlan {
         this.badge = badge;
     }
 
-    /*
-    public void updateEventDetails(Event event) {
-        eventDetails.put(event, event.apply());
-    }
-
-     */
-
     public void addGiftMenu(MenuItem giftMenu, int quantity) {
         this.giftMenu.put(giftMenu, quantity);
     }
