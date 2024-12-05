@@ -9,8 +9,8 @@ public class HateMenuParser {
         List<String> result = new ArrayList<>();
 
         inputName = inputName.trim();
-        if (inputName.isEmpty()) {
-            throw new IllegalArgumentException("입력값이 비어있습니다.");
+        if (inputName.isEmpty()) { //fixme 이게 없으면 어떻게 사이즈가 1개이지?
+            return result;
         }
 
         String[] splitName = inputName.split(",");

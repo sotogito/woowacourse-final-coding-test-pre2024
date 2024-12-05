@@ -32,6 +32,7 @@ public class CoachHateMenuService {
     }
 
     public void updateHateMenuByCoach(Coach coach, List<String> hateMenus) {
+        System.out.println(hateMenus.size());
         if (hateMenus.isEmpty()) {
             return;
         }
