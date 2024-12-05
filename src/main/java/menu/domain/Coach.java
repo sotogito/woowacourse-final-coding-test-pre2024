@@ -20,7 +20,20 @@ public class Coach {
     public void addHateMenu(String menu) {
         hateMenu.add(menu);
     }
-    
+
+    public boolean isHateMenu(String menu) {
+        return hateMenu.contains(menu);
+    }
+
+    public boolean isContainSameMenu(String menu) {
+        for (EnumMap.Entry<Week, String> entry : OneWeekMenuSchedule.entrySet()) {
+            if (menu.equals(entry.getValue())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addOneWeekMenuSchedule(Week week, String menu) {
         OneWeekMenuSchedule.put(week, menu);
     }
