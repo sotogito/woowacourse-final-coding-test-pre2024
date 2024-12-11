@@ -1,5 +1,7 @@
 package domain;
 
+import domain.constants.Category;
+
 public class Menu {
     private final int number;
     private final String name;
@@ -11,6 +13,18 @@ public class Menu {
         this.name = name;
         this.category = category;
         this.price = price;
+    }
+
+    public int calculateAmountByQuantity(final int quantity) {
+        return quantity * price;
+    }
+
+    public boolean isSameId(int orderId) {
+        return number == orderId;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

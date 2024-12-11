@@ -16,7 +16,17 @@ public class TableRepository {
         tables.add(new Table(8));
     }
 
+    public Table find(int number) {
+        for (Table table : tables) {
+            if (table.isSame(number)) {
+                return table;
+            }
+        }
+        throw new IllegalArgumentException("존재하지 않는 테이블입니다.");
+    }
+
     public static List<Table> tables() {
         return Collections.unmodifiableList(tables);
     }
+
 }

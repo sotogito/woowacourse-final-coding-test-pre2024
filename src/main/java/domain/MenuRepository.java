@@ -1,5 +1,6 @@
 package domain;
 
+import domain.constants.Category;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,6 +17,15 @@ public class MenuRepository {
         menus.add(new Menu(6, "순살치킨", Category.CHICKEN, 17_000));
         menus.add(new Menu(21, "콜라", Category.BEVERAGE, 1_000));
         menus.add(new Menu(22, "사이다", Category.BEVERAGE, 1_000));
+    }
+
+    public Menu find(int menuNumber) {
+        for (Menu menu : menus) {
+            if (menu.isSameId(menuNumber)) {
+                return menu;
+            }
+        }
+        throw new IllegalArgumentException("존재하지 않는 메뉴입니다.");
     }
 
     public static List<Menu> menus() {
